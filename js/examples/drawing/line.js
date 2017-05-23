@@ -12,7 +12,7 @@ function setup() {
 
 function draw() {
   clear();
-  background(255, 204, 29);
+  background(255, 235, 59);
   let boundary = {x: -width / 2, y: -height / 2, w: width, h: height};
 
   for (let i = 2; i < lines.length; i ++) {
@@ -42,10 +42,10 @@ function signedNoise(x, y, z) {
   return (noise(x, y, z) - 0.5) * 2;
 }
 
+/** signedNoise **/
+
 /** Line **/
 
 /** LineSegment **/
-
-/** drawLabel **/
 
 /** drawCircleMarker **/

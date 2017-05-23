@@ -1,10 +1,11 @@
 let msec = 0, prevNow = 0;
-let tween = new Tween();
-let bezier = tween.createCubicBezier({x:0.4, y: 0.0}, {x:0.2, y: 1});
+let tween, bezier;
 let actors = [];
 
 function setup() {
     canvas = createCanvas(windowWidth, windowHeight);
+    tween = new Tween();
+    bezier = tween.createCubicBezier({x:0.4, y: 0.0}, {x:0.2, y: 1});
     for (let i = 0; i < 10; i++) {
       let o = createVector(width / 2, height / 2);
       let d = createVector(randomBool() ? -1: 1, randomBool() ? -1: 1)
@@ -15,7 +16,7 @@ function setup() {
 
 function draw() {
   clear();
-  background(151, 200, 95);
+  background(255, 60, 0);
   ellapseTime();
 
   push();

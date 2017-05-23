@@ -1,6 +1,5 @@
 function setup() {
     canvas = createCanvas(windowWidth, windowHeight);
-
     deg = 45;
 }
 

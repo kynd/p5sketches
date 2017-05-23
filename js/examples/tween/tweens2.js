@@ -2,31 +2,31 @@ let graphData = [{y:0, msec: -5000}];
 let resolution = 80;
 let duration = 1000, interval = 500;
 let msec = 0, prevNow = 0, prevUpdateMsec = 0;
-
-let tween = new Tween();
-let tweens = [
-  {func:tween.linear , label: "linear"},
-  {func:(t)=>{return tween.powerIn(t,2);} , label: "powerIn(2)"},
-  {func:(t)=>{return tween.powerOut(t,2);} , label: "powerOut(2)"},
-  {func:(t)=>{return tween.powerInOut(t,2);} , label: "powerInOut(2)"},
-  {func:(t)=>{return tween.powerIn(t,3);} , label: "powerIn(3)"},
-  {func:(t)=>{return tween.powerOut(t,3);} , label: "powerOut(3)"},
-  {func:(t)=>{return tween.powerInOut(t,3);} , label: "powerInOut(3)"},
-  {func:tween.sineIn , label: "sineIn"},
-  {func:tween.sineOut , label: "sineOut"},
-  {func:tween.circularIn , label: "circularIn"},
-  {func:tween.circularOut , label: "circularOut"},
-  {func:tween.circularInOut , label: "circularInOut"},
-  {func:tween.createCubicBezier({x:0.4, y: 0.0}, {x:0.2, y: 1}), label:"bezier([0.2,0.8],[0.6,0.4])"}
-];
+let tween, tweens;
 
 function setup() {
     canvas = createCanvas(windowWidth, windowHeight);
+    tween = new Tween();
+    tweens = [
+      {func:tween.linear , label: "linear"},
+      {func:(t)=>{return tween.powerIn(t,2);} , label: "powerIn(2)"},
+      {func:(t)=>{return tween.powerOut(t,2);} , label: "powerOut(2)"},
+      {func:(t)=>{return tween.powerInOut(t,2);} , label: "powerInOut(2)"},
+      {func:(t)=>{return tween.powerIn(t,3);} , label: "powerIn(3)"},
+      {func:(t)=>{return tween.powerOut(t,3);} , label: "powerOut(3)"},
+      {func:(t)=>{return tween.powerInOut(t,3);} , label: "powerInOut(3)"},
+      {func:tween.sineIn , label: "sineIn"},
+      {func:tween.sineOut , label: "sineOut"},
+      {func:tween.circularIn , label: "circularIn"},
+      {func:tween.circularOut , label: "circularOut"},
+      {func:tween.circularInOut , label: "circularInOut"},
+      {func:tween.createCubicBezier({x:0.4, y: 0.0}, {x:0.2, y: 1}), label:"bezier([0.2,0.8],[0.6,0.4])"}
+    ];
 }
 
 function draw() {
   clear();
-  background(21, 147, 134);
+  background(29, 223, 182);
 
   while (msec + duration + interval >= prevUpdateMsec) {
     updateGraphData();
@@ -88,3 +88,5 @@ function updateGraphData() {
 /** Tween **/
 
 /** drawCircleMarker **/
+
+/** drawLabel **/

@@ -1,14 +1,14 @@
 let msec = 0, prevNow = 0;
-
-let tween = new Tween();
-tweens = [
-  (t)=>{return tween.powerInOut(t, 2)},
-  (t)=>{return tween.powerOut(t, 2)},
-  (t)=>{return tween.powerOut(t, 3)}
-]
+let tween, tweens;
 
 function setup() {
     canvas = createCanvas(windowWidth, windowHeight);
+    tween = new Tween();
+    tweens = [
+      (t)=>{return tween.powerInOut(t, 2)},
+      (t)=>{return tween.powerOut(t, 2)},
+      (t)=>{return tween.powerOut(t, 3)}
+    ]
 }
 
 function draw() {

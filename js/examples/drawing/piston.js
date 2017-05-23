@@ -42,7 +42,11 @@ function draw() {
   drawCircleMarker(pistonBottom, 4);
 }
 
+/** Line **/
+
 /** LineSegment **/
+
+/** Circle **/
 
 /** drawLabel **/
 

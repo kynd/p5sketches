@@ -13,7 +13,7 @@ function setup() {
 
 function draw() {
   clear();
-  background(255, 204, 29);
+  background(255, 235, 59);
 
   let boundary = {x: -width / 2, y: -height / 2, w: width, h: height}
 
@@ -49,7 +49,5 @@ function draw() {
 /** Line **/
 
 /** LineSegment **/
-
-/** drawLabel **/
 
 /** drawCircleMarker **/

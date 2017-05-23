@@ -82,4 +82,7 @@ function project(v, nearClip, cameraZ) {
 }
 
 /** drawCircleMarker **/
+
 /** drawSquareMarker **/
+
+/** drawLabel **/

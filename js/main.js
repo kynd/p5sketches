@@ -42,7 +42,7 @@ function createExampleFooter(elm, frame, scriptPath) {
   let note = createElement(document, "span", {class: "note"}, "Click the example to run");
 
   let open = createElement(document, "a", {href: "", class: "button"}, "Show sample code");
-  let edit = createElement(document, "a", {href: elm.getAttribute("data-edit"), class: "button"}, "Edit in Codepen");
+  let edit = createElement(document, "a", {href: elm.getAttribute("data-edit"), class: "button", target:"_blank"}, "Edit in Codepen");
   exampleFooter.appendChild(note);
   buttonContainer.appendChild(open);
   buttonContainer.appendChild(edit);

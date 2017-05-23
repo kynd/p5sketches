@@ -1,11 +1,11 @@
 let msec = 0, prevNow = 0;
-
-let tween = new Tween();
-let bezier = tween.createCubicBezier({x:0.4, y: 0.0}, {x:0.2, y: 1});
-let quad = (t)=>{return tween.powerOut(t, 2)};
+let tween, bezier, quad;
 
 function setup() {
     canvas = createCanvas(windowWidth, windowHeight);
+    tween = new Tween();
+    bezier = tween.createCubicBezier({x:0.4, y: 0.0}, {x:0.2, y: 1});
+    quad = (t)=>{return tween.powerOut(t, 2)};
 }
 
 function draw() {
