@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<title>Geometric Machines</title>
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Fredericka+the+Great|Open+Sans:300,400|Roboto+Mono:300" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="header"><div class="example" data-embed="drawing/circle"></div></div>
+<div id="main">
+
+<h1>Geometric Machines</h1>
+<p><a href="index.html">Sketching with Math and Quasi Physics</a></p>
+
+<h2>Lines</h2>
+<p>Two lines,
+  <span class="math-wrapper"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>a</mi><mn>1</mn></msub><mi>x</mi><mo>+</mo><mi>b</mi><msub><mi>y</mi><mn>1</mn></msub><mo>+</mo><mo>&#xA0;</mo><msub><mi>c</mi><mn>1</mn></msub><mo>=</mo><mn>0</mn></math></span>
+  and
+  <span class="math-wrapper"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>a</mi><mn>2</mn></msub><mi>x</mi><mo>+</mo><mi>b</mi><msub><mi>y</mi><mn>2</mn></msub><mo>+</mo><mo>&#xA0;</mo><msub><mi>c</mi><mn>2</mn></msub><mo>=</mo><mn>0</mn></math></span>
+  intersect if
+  <span class="math-wrapper"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>a</mi><mn>1</mn></msub><msub><mi>b</mi><mn>2</mn></msub><mo>&#x2260;</mo><msub><mi>a</mi><mn>2</mn></msub><msub><mi>b</mi><mn>1</mn></msub></math></span>
+</p>
+<p>The point of intersection is</p>
+<div class="math-wrapper">
+<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi><mo>=</mo><mo>(</mo><msub><mi>b</mi><mn>1</mn></msub><msub><mi>c</mi><mn>2</mn></msub><mo>-</mo><msub><mi>b</mi><mn>2</mn></msub><msub><mi>c</mi><mn>1</mn></msub><mo>)</mo><mo>/</mo><mo>(</mo><msub><mi>a</mi><mn>1</mn></msub><msub><mi>b</mi><mn>2</mn></msub><mo>-</mo><msub><mi>a</mi><mn>2</mn></msub><msub><mi>b</mi><mn>1</mn></msub><mo>)</mo></math></p>
+<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>y</mi><mo>=</mo><mo>(</mo><msub><mi>a</mi><mn>1</mn></msub><msub><mi>c</mi><mn>2</mn></msub><mo>-</mo><msub><mi>a</mi><mn>2</mn></msub><msub><mi>c</mi><mn>1</mn></msub><mo>)</mo><mo>/</mo><mo>(</mo><msub><mi>a</mi><mn>1</mn></msub><msub><mi>b</mi><mn>2</mn></msub><mo>-</mo><msub><mi>a</mi><mn>2</mn></msub><msub><mi>b</mi><mn>1</mn></msub><mo>)</mo></math></p>
+</div>
+
+<div class="example" data-embed="drawing/line" data-edit="http://codepen.io"></div>
+
+<h2>Line Segments</h2>
+<div class="example" data-embed="drawing/line_segments" data-edit="http://codepen.io"></div>
+
+<h2>Circle</h2>
+<div class="example" data-embed="drawing/circle" data-edit="http://codepen.io"></div>
+
+<h2>Crank Slider(1)</h2>
+<div class="example" data-embed="drawing/crank" data-edit="http://codepen.io"></div>
+
+<h2>Crank Slider(2)</h2>
+<div class="example" data-embed="drawing/crank2" data-edit="http://codepen.io"></div>
+
+<h2>Piston</h2>
+<div class="example" data-embed="drawing/piston" data-edit="http://codepen.io"></div>
+
+
+<footer><a href="https://twitter.com/kyndinfo">kynd</a> 2017 | Please suggest edits and/or better code at <a href="https://github.com/kynd/p5sketches">Github</a></footer>
+</div>
+
+<script src="js/main.js" type="text/javascript"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/vs.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+
+<script>window.MathJax = { MathML: { extensions: ["mml3.js", "content-mathml.js"]}};</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=MML_HTMLorMML"></script>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<title>Taming Randomness</title>
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Fredericka+the+Great|Open+Sans:300,400|Roboto+Mono:300" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="header"><div class="example" data-embed="random/random_walk"></div></div>
+<div id="main">
+
+<h1>Taming Randomness</h1>
+<p><a href="index.html">Sketching with Math and Quasi Physics</a></p>
+
+<h2>Uniform Random</h2>
+<p><pre><code>let v = Math.random()</code></pre></p>
+
+<p>note: <a href="https://p5js.org/reference/#/p5/random">random()</a> is available in p5.js</p>
+<div class="example" data-embed="random/random" data-edit="http://codepen.io"></div>
+
+<h2>Random<sup>2</sup></h2>
+<p><pre><code>let v = Math.pow(Math.random(), 2)</code></pre></p>
+<div class="example" data-embed="random/random_squared" data-edit="http://codepen.io"></div>
+
+<h2>Random<sup>n</sup></h2>
+<p><pre><code>let v = Math.pow(Math.random(), n)</code></pre></p>
+<div class="example" data-embed="random/random_power" data-edit="http://codepen.io"></div>
+
+<h2>(Random + Random) / 2</h2>
+<p><pre><code>let v = (Math.random() + Math.random()) / 2</code></pre></p>
+<div class="example" data-embed="random/random_average" data-edit="http://codepen.io"></div>
+
+<h2>(Random<sub>1</sub> + Random<sub>2</sub> + ... + Random<sub>n</sub>) / n</h2>
+<p><pre><code>let v = 0;
+for (let i = 0; i < n; i ++) {
+  v += Math.random();
+}
+v /= n;
+</code></pre></p>
+<div class="example" data-embed="random/random_average2" data-edit="http://codepen.io"></div>
+
+<h2>Normal Distribution(Gaussian)</h2>
+<p><pre><code>// Box-Muller Transform (Unif(0,1) => N(0,1))
+// avoiding log(0) by using (1 - Math.random())
+let mean = 0.5, variance = 0.1;
+let v = Math.sqrt(-2 * Math.log(1 - Math.random())) * Math.cos(2 * Math.PI * Math.random()) * variance + mean;
+</code></pre></p>
+<p>note: <a href="https://p5js.org/reference/#/p5/randomGaussian">randomGaussian()</a> is available in p5.js</p>
+<div class="example" data-embed="random/random_norm" data-edit="http://codepen.io"></div>
+
+<h2>Perin Noise</h2>
+<h3>Distribution</h3>
+<p><pre><code>let v = noise(x); x += 0.001;
+</code></pre></p>
+<p>see <a href="https://github.com/processing/p5.js/blob/master/src/math/noise.js">implementation of noise() function in p5.js</a></p>
+<div class="example" data-embed="random/random_noise" data-edit="http://codepen.io"></div>
+
+<h3>Variation over time</h3>
+<p><pre><code>let v = noise(x); x += 0.01;
+</code></pre></p>
+<div class="example" data-embed="random/random_noise2" data-edit="http://codepen.io"></div>
+
+<h2>Random Walkers</h2>
+<div class="example" data-embed="random/random_walk" data-edit="http://codepen.io"></div>
+
+<footer><a href="https://twitter.com/kyndinfo">kynd</a> 2017 | Please suggest edits and/or better code at <a href="https://github.com/kynd/p5sketches">Github</a></footer>
+</div>
+
+<script src="js/main.js" type="text/javascript"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/vs.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+
+<script>window.MathJax = { MathML: { extensions: ["mml3.js", "content-mathml.js"]}};</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=MML_HTMLorMML"></script>
+
+</body>
+</html>

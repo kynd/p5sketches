@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<title>Handy Math</title>
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Fredericka+the+Great|Open+Sans:300,400|Roboto+Mono:300" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="header"><div class="example" data-embed="math/distance"></div></div>
+<div id="main">
+
+<h1>Handy Math</h1>
+<p><a href="index.html">Sketching with Math and Quasi Physics</a></p>
+
+<h2>Sine, Cosine and Tangent</h2>
+
+<div class="math-wrapper">
+<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>sine</mi><mo>=</mo><mfrac><mi>opposite</mi><mi>hypotenuse</mi></mfrac></math></p>
+<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>cosine</mi><mo>=</mo><mfrac><mi>adjacent</mi><mi>hypotenuse</mi></mfrac></math></p>
+<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>tangent</mi><mo>=</mo><mfrac><mi>sine</mi><mi>cosine</mi></mfrac></math></p>
+</div>
+<p>* Note that p5.js is based on the screen coordinate system in which y increase from top to bottom. The opposite is flipped by multiplying -1 in the rendering below.</p>
+<div class="example" data-embed="math/sine_cosine" data-edit="http://codepen.io"></div>
+
+
+<h2>Rotate 2D points</h2>
+
+<div class="math-wrapper">
+<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mfenced open="[" close="]"><mtable><mtr><mtd><mi>x</mi><mo>'</mo></mtd></mtr><mtr><mtd><mi>y</mi><mo>'</mo></mtd></mtr></mtable></mfenced><mo>=</mo><mfenced open="[" close="]"><mtable><mtr><mtd><mi>cos</mi><mi>&#x3B8;</mi></mtd><mtd><mo>-</mo><mi>sin</mi><mi>&#x3B8;</mi></mtd></mtr><mtr><mtd><mi>sin</mi><mi>&#x3B8;</mi></mtd><mtd><mi>cos</mi><mi>&#x3B8;</mi></mtd></mtr></mtable></mfenced><mfenced open="[" close="]"><mtable><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math></p>
+</div>
+<div class="example" data-embed="math/rotate2d" data-edit='http://codepen.io'></div>
+<h3>Read more</h3>
+<p><a href="http://www.alanzucconi.com/2016/02/03/2d-rotations/" target="_blank">A Gentle Primer on 2D Rotations</a></p>
+
+<h2>Euclidean distance between two points</h2>
+
+<div class="math-wrapper">
+<h3>Two dimensions</h3>
+<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>p</mi><mo>=</mo><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>y</mi><mn>1</mn></msub><mo>)</mo><mo>,</mo><mspace width="8px"><mi>q</mi><mo>=</mo><mo>(</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><msub><mi>y</mi><mn>2</mn></msub><mo>)</mo></math></p>
+<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>distance</mi><mo>(</mo><mi>p</mi><mo>,</mo><mi>q</mi><mo>)</mo><mo>=</mo><msqrt><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>-</mo><msub><mi>x</mi><mn>2</mn></msub><msup><mo>)</mo><mn>2</mn></msup><mo>+</mo><mo>(</mo><msub><mi>y</mi><mn>1</mn></msub><mo>-</mo><msub><mi>y</mi><mn>2</mn></msub><msup><mo>)</mo><mn>2</mn></msup></msqrt></math></p>
+
+<h3>n dimensions</h3>
+<p><math xmlns="http://www.w3.org/1998/Math/MathML"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>distance</mi><mo>(</mo><mi>p</mi><mo>,</mo><mi>q</mi><mo>)</mo>
+<mo>=</mo><msqrt><mo>(</mo><msub><mi>p</mi><mn>1</mn></msub><mo>-</mo><msub><mi>q</mi><mn>1</mn></msub><msup><mo>)</mo><mn>2</mn></msup><mo>+</mo><mo>(</mo><msub><mi>p</mi><mn>2</mn></msub><mo>-</mo><msub><mi>q</mi><mn>2</mn></msub><msup><mo>)</mo><mn>2</mn></msup><mo>+</mo><mo>&#x22EF;</mo><mo>+</mo><mo>(</mo><msub><mi>p</mi><mi>n</mi></msub><mo>-</mo><msub><mi>q</mi><mi>n</mi></msub><msup><mo>)</mo><mn>2</mn></msup></msqrt>
+<mo>=</mo><msqrt><munderover><mo>&#x2211;</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mo>(</mo><msub><mi>p</mi><mi>i</mi></msub><mo>+</mo><msub><mi>q</mi><mi>i</mi></msub><msup><mo>)</mo><mn>2</mn></msup></msqrt></math></p>
+</div>
+<div class="example" data-embed="math/distance" data-edit='http://codepen.io'></div>
+
+
+<h2>Perspective Projection (Fixed Camera)</h2>
+
+<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>[</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo>]</mo></math> projects to <math xmlns="http://www.w3.org/1998/Math/MathML"><mfenced open="[" close="]"><mrow><mi>x</mi><mfrac><mstyle displaystyle="true"><msub><mi>d</mi><mn>1</mn></msub></mstyle><mstyle displaystyle="true"><msub><mi>d</mi><mn>2</mn></msub></mstyle></mfrac><mo>,</mo><mi>y</mi><mfrac><mstyle displaystyle="true"><msub><mi>d</mi><mn>1</mn></msub></mstyle><mstyle displaystyle="true"><msub><mi>d</mi><mn>2</mn></msub></mstyle></mfrac></mrow></mfenced></math></p>
+<p>
+<dl>
+  <dt><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>d</mi><mn>1</mn></msub><mo>=</mo></math> Focal length</dt>
+  <dd>the axial distance from the camera center to the image plane</dd>
+  <dt><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>d</mi><mn>2</mn></msub><mo>=</mo></math> Subject distance</dt>
+  <dd>the axial distance from the camera center to the subject</dd>
+</dl>
+</p>
+
+<div class="example" data-embed="math/perspective" data-edit='http://codepen.io'></div>
+
+
+<h2>Dot Product</h2>
+<h3>Two dimensions</h3>
+<div class="math-wrapper">
+<p><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi mathvariant="bold-italic">v</mi><mn mathvariant="bold">1</mn></msub><mo>=</mo><mo>[</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>y</mi><mn>1</mn></msub><mo>]</mo><mo>,</mo><mspace width="8px"/><msub><mi mathvariant="bold-italic">v</mi><mn mathvariant="bold">2</mn></msub><mo>=</mo><mo>[</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><msub><mi>y</mi><mn>2</mn></msub><mo>]</mo></math></p>
+<p><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi mathvariant="bold-italic">v</mi><mn mathvariant="bold">1</mn></msub><mo>&#xB7;</mo><msub><mi mathvariant="bold-italic">v</mi><mn mathvariant="bold">2</mn></msub><mo>=</mo><msub><mi>x</mi><mn>1</mn></msub><msub><mi>x</mi><mn>2</mn></msub><mo>+</mo><msub><mi>y</mi><mn>1</mn></msub><msub><mi>y</mi><mn>2</mn></msub></math></p>
+</div>
+<h3>n dimensions</h3>
+<div class="math-wrapper">
+<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="bold-italic">a</mi><mo>=</mo><mo>[</mo><msub><mi>a</mi><mn>1</mn></msub><mo>,</mo><msub><mi>a</mi><mn>2</mn></msub><mo>,</mo><msub><mi>a</mi><mn>3</mn></msub><mo>,</mo><mo>&#x2026;</mo><mo>,</mo><msub><mi>a</mi><mi>n</mi></msub><mo>]</mo><mo>,</mo><mspace width="8px" /><mi mathvariant="bold-italic">b</mi><mo>=</mo><mo>[</mo><msub><mi>b</mi><mn>1</mn></msub><mo>,</mo><msub><mi>b</mi><mn>2</mn></msub><mo>,</mo><msub><mi>b</mi><mn>3</mn></msub><mo>,</mo><mo>&#x2026;</mo><mo>,</mo><msub><mi>b</mi><mi>n</mi></msub><mo>]</mo></math></p>
+<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="bold-italic">a</mi><mo>&#xB7;</mo><mi mathvariant="bold-italic">b</mi><mo>=</mo><msub><mi>a</mi><mn>1</mn></msub><msub><mi>b</mi><mn>1</mn></msub><mo>+</mo><msub><mi>a</mi><mn>2</mn></msub><msub><mi>b</mi><mn>2</mn></msub><mo>+</mo><msub><mi>a</mi><mn>3</mn></msub><msub><mi>b</mi><mn>3</mn></msub><mo>&#x2026;</mo><msub><mi>a</mi><mn>n</mn></msub><msub><mi>b</mi><mn>n</mn></msub></math></p>
+</div>
+<p>
+<ul>
+  <li>Two non-zero vectors a and b are orthogonal if and only if a ⋅ b = 0.</li>
+  <li>If the dot product is positive, the angle between the vectors is less than 90&deg;.</li>
+  <li>If the dot product is negative, the angle between the vectors is more than 90&deg;.</li>
+</ul>
+</p>
+<div class="example" data-embed="math/dot_product" data-edit='http://codepen.io'></div>
+
+<h2>Cross Product</h2>
+<h3>3 dimensions</h3>
+<div class="math-wrapper">
+<p><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi mathvariant="bold-italic">v</mi><mn mathvariant="bold">1</mn></msub><mo>=</mo><mo>[</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>y</mi><mn>1</mn></msub><mo>,</mo><msub><mi>z</mi><mn>1</mn></msub><mo>]</mo><mo>,</mo><mspace width="8px"/><msub><mi mathvariant="bold-italic">v</mi><mn mathvariant="bold">2</mn></msub><mo>=</mo><mo>[</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><msub><mi>y</mi><mn>2</mn></msub><mo>,</mo><msub><mi>z</mi><mn>2</mn></msub><mo>]</mo></math></p>
+<p><math xmlns="http://www.w3.org/1998/Math/MathML"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi mathvariant="bold-italic">v</mi><mn mathvariant="bold">1</mn></msub><mo>&#xD7;</mo><msub><mi mathvariant="bold-italic">v</mi><mn mathvariant="bold">2</mn></msub><mo>=</mo><mo>[</mo><msub><mi>y</mi><mn>1</mn></msub><msub><mi>z</mi><mn>2</mn></msub><mo>-</mo><msub><mi>z</mi><mn>1</mn></msub><msub><mi>y</mi><mn>2</mn></msub><mo>,</mo><msub><mi>z</mi><mn>1</mn></msub><msub><mi>x</mi><mn>2</mn></msub><mo>-</mo><msub><mi>x</mi><mn>1</mn></msub><msub><mi>z</mi><mn>2</mn></msub><mo>,</mo><msub><mi>x</mi><mn>1</mn></msub><msub><mi>y</mi><mn>2</mn></msub><mo>-</mo><msub><mi>y</mi><mn>1</mn></msub><msub><mi>x</mi><mn>2</mn></msub><mo>]</mo></math></p>
+</div>
+<p>
+  <ul>
+    <li>The cross product is orthogonal to both of the original vectors(v1 and v2), which implies the cross product is perpendicular to the plane defined by the original vectors.</li>
+    <li>If the cross product of two vectors is the zero vector, either one or both of the inputs is the zero vector, or they are parallel or antiparallel.</li>
+  </ul>
+</p>
+<div class="example" data-embed="math/cross_product" data-edit='http://codepen.io'></div>
+
+<footer><a href="https://twitter.com/kyndinfo">kynd</a> 2017 | Please suggest edits and/or better code at <a href="https://github.com/kynd/p5sketches">Github</a></footer>
+</div>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/vs.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+
+<script>window.MathJax = { MathML: { extensions: ["mml3.js", "content-mathml.js"]}};</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=MML_HTMLorMML"></script>
+
+<script src="js/main.js" type="text/javascript"></script>
+
+</body>
+</html>

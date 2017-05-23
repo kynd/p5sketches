@@ -1,3 +1,3 @@
 # p5sketches
 
-Skeches in p5.js
+sketches in p5.js
