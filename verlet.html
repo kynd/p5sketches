@@ -4,20 +4,60 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-<title>Building Rag Doll</title>
+<title>Building a Ragdoll</title>
 <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Fredericka+the+Great|Open+Sans:300,400|Roboto+Mono:300" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-<div id="header"><div class="example" data-embed="tween/tweens2"></div></div>
+<div id="header"><div class="example" data-embed="verlet/ragdoll3d"></div></div>
 <div id="main">
 
-<h1>Building Rag Doll</h1>
+<h1>Building a Ragdoll</h1>
 <p><a href="index.html">Sketching with Math and Quasi Physics</a></p>
 
 <h2>Verlet Points</h2>
-<div class="example" data-embed="verlet/verlet_points" data-edit="https://codepen.io/kynd/pen/JNwmxj"></div>
+<p>Verlet integration is based on the assumption that, without other force applied, an object will continue the uniform motion that it previously had. Instead of explcitly maintaining velocity as a variable belongs to the object, the change from the previous position to the current position is used as substitute for the velocity.</p>
 
+<p><pre><code>let v = (random(1) + random(1)) / 2;
+update() {
+  let temp = this.position.copy();
+  this.position.add(this.getVelocity());
+  this.prevPosition = temp;
+}
+
+setVelocity(v) {
+  this.prevPosition = this.position.copy().sub(v);
+}
+
+getVelocity() {
+  return this.position.copy().sub(this.prevPosition);
+}
+</code></pre></p>
+<div class="example" data-embed="verlet/verlet_points" data-edit="https://codepen.io/kynd/pen/BRMmGO"></div>
+
+<h3>Read more</h3>
+<p><a href="http://wiki.roblox.com/index.php?title=Verlet_integration" target="_blank">Verlet integration</a></p>
+
+<h2>Verlet Sticks</h2>
+<p>The points can be connected by segments(sticks) that constrain the distances between them</p>
+<p><pre><code>update() {
+  let dist = this.pa.position.dist(this.pb.position);
+  let diff = this.length - dist;
+  let offset = this.pa.position.copy().sub(this.pb.position).mult(diff / dist / 2);
+  this.pa.position.add(offset);
+  this.pb.position.sub(offset);
+}
+</code></pre></p>
+<div class="example" data-embed="verlet/verlet_sticks" data-edit="https://codepen.io/kynd/pen/aWXVPZ"></div>
+
+<h2>Pendulum</h2>
+<div class="example" data-embed="verlet/pendulum" data-edit="https://codepen.io/kynd/pen/pPGdqX"></div>
+
+<h2>Ragdoll</h2>
+<div class="example" data-embed="verlet/ragdoll" data-edit="https://codepen.io/kynd/pen/dWaZaR"></div>
+
+<h2>Ragdoll 3D</h2>
+<div class="example" data-embed="verlet/ragdoll3d" data-edit="https://codepen.io/kynd/pen/JNwmxj"></div>
 
 <p><a href="index.html">index</a></p>
 <footer><a href="https://twitter.com/kyndinfo">kynd</a> 2017 | Please suggest edits and/or better code at <a href="https://github.com/kynd/p5sketches">Github</a></footer>

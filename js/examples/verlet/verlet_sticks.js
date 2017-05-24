@@ -1,5 +1,5 @@
 
-let points = [];
+let points = [], sticks = [];
 let accelIndex, accel;
 
 function setup() {
@@ -24,12 +24,25 @@ function draw() {
     }
   });
 
+  sticks.forEach((s)=>{
+    s.update();
+  });
+
   let f = (frameCount - 1) % 60;
   if (f == 0) {
     accelIndex = floor(random(points.length));
     accel = random2D().mult((random(0.5) + 0.5));
-  }
+    let idx0, idx1;
+    do {
+      idx0 = floor(random(points.length));
+      idx1 = floor(random(points.length));
+    } while (idx0 == idx1);
 
+    sticks.push(new VerletStick(points[idx0], points[idx1]));
+    if (sticks.length > 5) {
+      sticks.shift();
+    }
+  }
 
   fill(255); stroke(0); strokeWeight(3);
   if (f < 30) {
@@ -38,7 +51,9 @@ function draw() {
     let p1 = points[accelIndex].position.copy().add(accel.copy().mult(100));
     drawArrow(p0.x, p0.y, p1.x, p1.y);
   }
+
   strokeWeight(1);
+  sticks.forEach((s)=>{s.draw();});
   points.forEach((p)=>{p.draw();});
 }
 
@@ -51,3 +66,5 @@ function random2D() {
 /** drawArrow **/
 
 /** VerletPoint **/
+
+/** VerletStick **/

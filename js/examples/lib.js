@@ -74,11 +74,20 @@ function rotate3d(v, axis, angle) {
 	return createVector(x, y, z);
 }
 
-function getProjectionFunc(n, z) {
+function random2D() {
+  return createVector(random(-1, 1), random(-1, 1)).normalize();
+}
+
+function random3D() {
+  return createVector(random(-1, 1), random(-1, 1), random(-1, 1)).normalize();
+}
+
+function getProjectionFunc(n, z, m = 1) {
   let nearClip = n;
   let cameraZ = z;
+  let multiplier = m;
   return (v)=>{
-    let r = abs(cameraZ - nearClip) / abs(cameraZ - v.z);
+    let r = abs(cameraZ - nearClip) / abs(cameraZ - v.z) * multiplier;
     return createVector(v.x * r, v.y * r);
   }
   // Look up for Projection Matrix for more proper 3D projection
@@ -410,3 +419,58 @@ class Tween {
 }
 
 window.Tween = Tween;
+
+class VerletPoint {
+  constructor(p) {
+    this.setPosition(p);
+  }
+
+  setPosition(p) {
+    this.position = p;
+    this.prevPosition = this.position.copy();
+  }
+
+  update() {
+    let temp = this.position.copy();
+    this.position.add(this.getVelocity());
+    this.prevPosition = temp;
+  }
+
+  setVelocity(v) {
+    this.prevPosition = this.position.copy().sub(v);
+  }
+
+  getVelocity() {
+    return this.position.copy().sub(this.prevPosition);
+  }
+
+  draw() {
+    ellipse(this.position.x, this.position.y, 8, 8);
+  }
+}
+
+window.VerletPoint = VerletPoint;
+
+class VerletStick {
+  constructor(a, b) {
+    this.pa = a;
+    this.pb = b;
+    this.length = this.pa.position.dist(this.pb.position);
+  }
+
+  update() {
+    let dist = this.pa.position.dist(this.pb.position);
+    let diff = this.length - dist;
+    let offset = this.pa.position.copy().sub(this.pb.position).mult(diff / dist / 2);
+    this.pa.position.add(offset);
+    this.pb.position.sub(offset);
+  }
+
+  draw() {
+    let p0 = this.pa.position;
+    let p1 = this.pb.position;
+    line(p0.x, p0.y, p1.x, p1.y);
+  }
+}
+
+window.VerletStick = VerletStick;
