@@ -51,7 +51,7 @@ function draw() {
     p.position.y = min(p.position.y, height / 2);
   });
 
-  for (let i = 0; i < 5; i ++) {
+  for (let i = 0; i < 2; i ++) {
     sticks.forEach((s)=>{
       s.update();
     });
