@@ -82,7 +82,7 @@ function draw() {
     line(p0.x, p0.y, p1.x, p1. y);
   });
   points.forEach((p)=>{
-    drawCircleMarker(p.screenPos, 4);
+    //drawCircleMarker(p.screenPos, 4);
   });
   pop();
 }

@@ -59,7 +59,7 @@ function draw() {
   }
   strokeWeight(1);
   sticks.forEach((s)=>{s.draw();});
-  points.forEach((p)=>{p.draw();});
+  //points.forEach((p)=>{p.draw();});
   pop();
 }
 
