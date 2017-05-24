@@ -14,13 +14,12 @@
 
 <h1>Handy Math</h1>
 <p><a href="index.html">Sketching with Math and Quasi Physics</a></p>
-
 <h2>Sine, Cosine and Tangent</h2>
 
 <div class="math-wrapper">
-<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>sine</mi><mo>=</mo><mfrac><mi>opposite</mi><mi>hypotenuse</mi></mfrac></math></p>
-<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>cosine</mi><mo>=</mo><mfrac><mi>adjacent</mi><mi>hypotenuse</mi></mfrac></math></p>
-<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>tangent</mi><mo>=</mo><mfrac><mi>sine</mi><mi>cosine</mi></mfrac></math></p>
+<p>$$\mathrm{sine}=\frac{\mathrm{opposite}}{\mathrm{hypotenuse}}$$</p>
+<p>$$\mathrm{cosine}=\frac{\mathrm{adjacent}}{\mathrm{hypotenuse}}$$</p>
+<p>$$\mathrm{tangent}=\frac{\mathrm{sine}}{\mathrm{cosine}}$$</p>
 </div>
 <p>* Note that p5.js is based on the screen coordinate system in which y increase from top to bottom. The opposite is flipped by multiplying -1 in the rendering below.</p>
 <div class="example" data-embed="math/sine_cosine" data-edit="http://codepen.io/kynd/pen/oYVPbz"></div>
@@ -29,7 +28,7 @@
 <h2>Rotate 2D points</h2>
 
 <div class="math-wrapper">
-<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mfenced open="[" close="]"><mtable><mtr><mtd><mi>x</mi><mo>'</mo></mtd></mtr><mtr><mtd><mi>y</mi><mo>'</mo></mtd></mtr></mtable></mfenced><mo>=</mo><mfenced open="[" close="]"><mtable><mtr><mtd><mi>cos</mi><mi>&#x3B8;</mi></mtd><mtd><mo>-</mo><mi>sin</mi><mi>&#x3B8;</mi></mtd></mtr><mtr><mtd><mi>sin</mi><mi>&#x3B8;</mi></mtd><mtd><mi>cos</mi><mi>&#x3B8;</mi></mtd></mtr></mtable></mfenced><mfenced open="[" close="]"><mtable><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math></p>
+<p>$$\begin{bmatrix}x'\\y'\end{bmatrix}=\begin{bmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}$$</p>
 </div>
 <div class="example" data-embed="math/rotate2d" data-edit='https://codepen.io/kynd/pen/vmvzVM'></div>
 <h3>Read more</h3>
@@ -39,25 +38,23 @@
 
 <div class="math-wrapper">
 <h3>Two dimensions</h3>
-<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>p</mi><mo>=</mo><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>y</mi><mn>1</mn></msub><mo>)</mo><mo>,</mo><mspace width="8px"><mi>q</mi><mo>=</mo><mo>(</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><msub><mi>y</mi><mn>2</mn></msub><mo>)</mo></math></p>
-<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>distance</mi><mo>(</mo><mi>p</mi><mo>,</mo><mi>q</mi><mo>)</mo><mo>=</mo><msqrt><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>-</mo><msub><mi>x</mi><mn>2</mn></msub><msup><mo>)</mo><mn>2</mn></msup><mo>+</mo><mo>(</mo><msub><mi>y</mi><mn>1</mn></msub><mo>-</mo><msub><mi>y</mi><mn>2</mn></msub><msup><mo>)</mo><mn>2</mn></msup></msqrt></math></p>
+<p>$$p=(x_1,y_1),\;q=(x_2,y_2)$$</p>
+<p>$$\mathrm{distance}(p,q)=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}$$</p>
 
 <h3>n dimensions</h3>
-<p><math xmlns="http://www.w3.org/1998/Math/MathML"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>distance</mi><mo>(</mo><mi>p</mi><mo>,</mo><mi>q</mi><mo>)</mo>
-<mo>=</mo><msqrt><mo>(</mo><msub><mi>p</mi><mn>1</mn></msub><mo>-</mo><msub><mi>q</mi><mn>1</mn></msub><msup><mo>)</mo><mn>2</mn></msup><mo>+</mo><mo>(</mo><msub><mi>p</mi><mn>2</mn></msub><mo>-</mo><msub><mi>q</mi><mn>2</mn></msub><msup><mo>)</mo><mn>2</mn></msup><mo>+</mo><mo>&#x22EF;</mo><mo>+</mo><mo>(</mo><msub><mi>p</mi><mi>n</mi></msub><mo>-</mo><msub><mi>q</mi><mi>n</mi></msub><msup><mo>)</mo><mn>2</mn></msup></msqrt>
-<mo>=</mo><msqrt><munderover><mo>&#x2211;</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mo>(</mo><msub><mi>p</mi><mi>i</mi></msub><mo>+</mo><msub><mi>q</mi><mi>i</mi></msub><msup><mo>)</mo><mn>2</mn></msup></msqrt></math></p>
+<p>$$\mathrm{distance}(p,q)=\sqrt{(p_1-q_1)^2+(p_2-q_2)^2+\cdots+(p_n-q_n)^2}=\sqrt{\sum_{i=1}^n(p_i+q_i)^2}$$</p>
 </div>
 <div class="example" data-embed="math/distance" data-edit='https://codepen.io/kynd/pen/oWJPJJ'></div>
 
 
 <h2>Perspective Projection (Fixed Camera)</h2>
 
-<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>[</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo>]</mo></math> projects to <math xmlns="http://www.w3.org/1998/Math/MathML"><mfenced open="[" close="]"><mrow><mi>x</mi><mfrac><mstyle displaystyle="true"><msub><mi>d</mi><mn>1</mn></msub></mstyle><mstyle displaystyle="true"><msub><mi>d</mi><mn>2</mn></msub></mstyle></mfrac><mo>,</mo><mi>y</mi><mfrac><mstyle displaystyle="true"><msub><mi>d</mi><mn>1</mn></msub></mstyle><mstyle displaystyle="true"><msub><mi>d</mi><mn>2</mn></msub></mstyle></mfrac></mrow></mfenced></math></p>
+<p>\(\lbrack x,y,z\rbrack\) projects to \(\left[x\frac{\displaystyle d_1}{\displaystyle d_2},y\frac{\displaystyle d_1}{\displaystyle d_2}\right]\)</p>
 <p>
 <dl>
-  <dt><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>d</mi><mn>1</mn></msub><mo>=</mo></math> Focal length</dt>
+  <dt>\(d_1=\) Focal length</dt>
   <dd>the axial distance from the camera center to the image plane</dd>
-  <dt><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>d</mi><mn>2</mn></msub><mo>=</mo></math> Subject distance</dt>
+  <dt>\(d_2=\)  Subject distance</dt>
   <dd>the axial distance from the camera center to the subject</dd>
 </dl>
 </p>
@@ -68,13 +65,13 @@
 <h2>Dot Product</h2>
 <h3>Two dimensions</h3>
 <div class="math-wrapper">
-<p><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi mathvariant="bold-italic">v</mi><mn mathvariant="bold">1</mn></msub><mo>=</mo><mo>[</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>y</mi><mn>1</mn></msub><mo>]</mo><mo>,</mo><mspace width="8px"/><msub><mi mathvariant="bold-italic">v</mi><mn mathvariant="bold">2</mn></msub><mo>=</mo><mo>[</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><msub><mi>y</mi><mn>2</mn></msub><mo>]</mo></math></p>
-<p><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi mathvariant="bold-italic">v</mi><mn mathvariant="bold">1</mn></msub><mo>&#xB7;</mo><msub><mi mathvariant="bold-italic">v</mi><mn mathvariant="bold">2</mn></msub><mo>=</mo><msub><mi>x</mi><mn>1</mn></msub><msub><mi>x</mi><mn>2</mn></msub><mo>+</mo><msub><mi>y</mi><mn>1</mn></msub><msub><mi>y</mi><mn>2</mn></msub></math></p>
+<p>$${\boldsymbol v}_\mathbf1=\lbrack x_1,y_1\rbrack,\hspace{8px}{\boldsymbol v}_\mathbf2=\lbrack x_2,y_2\rbrack$$</p>
+<p>$${\boldsymbol v}_\mathbf1\cdot{\boldsymbol v}_\mathbf2=x_1x_2+y_1y_2$$</p>
 </div>
 <h3>n dimensions</h3>
 <div class="math-wrapper">
-<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="bold-italic">a</mi><mo>=</mo><mo>[</mo><msub><mi>a</mi><mn>1</mn></msub><mo>,</mo><msub><mi>a</mi><mn>2</mn></msub><mo>,</mo><msub><mi>a</mi><mn>3</mn></msub><mo>,</mo><mo>&#x2026;</mo><mo>,</mo><msub><mi>a</mi><mi>n</mi></msub><mo>]</mo><mo>,</mo><mspace width="8px" /><mi mathvariant="bold-italic">b</mi><mo>=</mo><mo>[</mo><msub><mi>b</mi><mn>1</mn></msub><mo>,</mo><msub><mi>b</mi><mn>2</mn></msub><mo>,</mo><msub><mi>b</mi><mn>3</mn></msub><mo>,</mo><mo>&#x2026;</mo><mo>,</mo><msub><mi>b</mi><mi>n</mi></msub><mo>]</mo></math></p>
-<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="bold-italic">a</mi><mo>&#xB7;</mo><mi mathvariant="bold-italic">b</mi><mo>=</mo><msub><mi>a</mi><mn>1</mn></msub><msub><mi>b</mi><mn>1</mn></msub><mo>+</mo><msub><mi>a</mi><mn>2</mn></msub><msub><mi>b</mi><mn>2</mn></msub><mo>+</mo><msub><mi>a</mi><mn>3</mn></msub><msub><mi>b</mi><mn>3</mn></msub><mo>&#x2026;</mo><msub><mi>a</mi><mn>n</mn></msub><msub><mi>b</mi><mn>n</mn></msub></math></p>
+<p>$$\boldsymbol a=\lbrack a_1,a_2,a_3,\dots,a_n\rbrack,\hspace{8px}\boldsymbol b=\lbrack b_1,b_2,b_3,\dots,b_n\rbrack$$</p>
+<p>$$\boldsymbol a\cdot\boldsymbol b=a_1b_1+a_2b_2+a_3b_3\dots a_nb_n$$</p>
 </div>
 <p>
 <ul>
@@ -88,8 +85,8 @@
 <h2>Cross Product</h2>
 <h3>3 dimensions</h3>
 <div class="math-wrapper">
-<p><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi mathvariant="bold-italic">v</mi><mn mathvariant="bold">1</mn></msub><mo>=</mo><mo>[</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>y</mi><mn>1</mn></msub><mo>,</mo><msub><mi>z</mi><mn>1</mn></msub><mo>]</mo><mo>,</mo><mspace width="8px"/><msub><mi mathvariant="bold-italic">v</mi><mn mathvariant="bold">2</mn></msub><mo>=</mo><mo>[</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><msub><mi>y</mi><mn>2</mn></msub><mo>,</mo><msub><mi>z</mi><mn>2</mn></msub><mo>]</mo></math></p>
-<p><math xmlns="http://www.w3.org/1998/Math/MathML"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi mathvariant="bold-italic">v</mi><mn mathvariant="bold">1</mn></msub><mo>&#xD7;</mo><msub><mi mathvariant="bold-italic">v</mi><mn mathvariant="bold">2</mn></msub><mo>=</mo><mo>[</mo><msub><mi>y</mi><mn>1</mn></msub><msub><mi>z</mi><mn>2</mn></msub><mo>-</mo><msub><mi>z</mi><mn>1</mn></msub><msub><mi>y</mi><mn>2</mn></msub><mo>,</mo><msub><mi>z</mi><mn>1</mn></msub><msub><mi>x</mi><mn>2</mn></msub><mo>-</mo><msub><mi>x</mi><mn>1</mn></msub><msub><mi>z</mi><mn>2</mn></msub><mo>,</mo><msub><mi>x</mi><mn>1</mn></msub><msub><mi>y</mi><mn>2</mn></msub><mo>-</mo><msub><mi>y</mi><mn>1</mn></msub><msub><mi>x</mi><mn>2</mn></msub><mo>]</mo></math></p>
+<p>$${\boldsymbol v}_\mathbf1=\lbrack x_1,y_1,z_1\rbrack,\;{\boldsymbol v}_\mathbf2=\lbrack x_2,y_2,z_2\rbrack$$</p>
+<p>$${\boldsymbol v}_\mathbf1\times{\boldsymbol v}_\mathbf2=\lbrack y_1z_2-z_1y_2,z_1x_2-x_1z_2,x_1y_2-y_1x_2\rbrack$$</p>
 </div>
 <p>
   <ul>
@@ -107,10 +104,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/vs.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
 
-<script>window.MathJax = { MathML: { extensions: ["mml3.js", "content-mathml.js"]}};</script>
-<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=MML_HTMLorMML"></script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+</script>
 
 <script src="js/main.js" type="text/javascript"></script>
-
 </body>
 </html>

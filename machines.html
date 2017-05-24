@@ -16,17 +16,17 @@
 <p><a href="index.html">Sketching with Math and Quasi Physics</a></p>
 
 <h2>Lines</h2>
-<p>Two lines,
-  <span class="math-wrapper"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>a</mi><mn>1</mn></msub><mi>x</mi><mo>+</mo><mi>b</mi><msub><mi>y</mi><mn>1</mn></msub><mo>+</mo><mo>&#xA0;</mo><msub><mi>c</mi><mn>1</mn></msub><mo>=</mo><mn>0</mn></math></span>
+<p><span class="math-wrapper">Two lines,
+  \(a_1x+by_1+\;c_1=0\)</span>
   and
-  <span class="math-wrapper"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>a</mi><mn>2</mn></msub><mi>x</mi><mo>+</mo><mi>b</mi><msub><mi>y</mi><mn>2</mn></msub><mo>+</mo><mo>&#xA0;</mo><msub><mi>c</mi><mn>2</mn></msub><mo>=</mo><mn>0</mn></math></span>
+  <span class="math-wrapper">\(a_2x+by_2+\;c_2=0\)</span>
   intersect if
-  <span class="math-wrapper"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>a</mi><mn>1</mn></msub><msub><mi>b</mi><mn>2</mn></msub><mo>&#x2260;</mo><msub><mi>a</mi><mn>2</mn></msub><msub><mi>b</mi><mn>1</mn></msub></math></span>
+  <span class="math-wrapper">\(a_1b_2\neq a_2b_1\)</span>
 </p>
 <p>The point of intersection is</p>
 <div class="math-wrapper">
-<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi><mo>=</mo><mo>(</mo><msub><mi>b</mi><mn>1</mn></msub><msub><mi>c</mi><mn>2</mn></msub><mo>-</mo><msub><mi>b</mi><mn>2</mn></msub><msub><mi>c</mi><mn>1</mn></msub><mo>)</mo><mo>/</mo><mo>(</mo><msub><mi>a</mi><mn>1</mn></msub><msub><mi>b</mi><mn>2</mn></msub><mo>-</mo><msub><mi>a</mi><mn>2</mn></msub><msub><mi>b</mi><mn>1</mn></msub><mo>)</mo></math></p>
-<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>y</mi><mo>=</mo><mo>(</mo><msub><mi>a</mi><mn>1</mn></msub><msub><mi>c</mi><mn>2</mn></msub><mo>-</mo><msub><mi>a</mi><mn>2</mn></msub><msub><mi>c</mi><mn>1</mn></msub><mo>)</mo><mo>/</mo><mo>(</mo><msub><mi>a</mi><mn>1</mn></msub><msub><mi>b</mi><mn>2</mn></msub><mo>-</mo><msub><mi>a</mi><mn>2</mn></msub><msub><mi>b</mi><mn>1</mn></msub><mo>)</mo></math></p>
+<p>$$x=(b_1c_2-b_2c_1)/(a_1b_2-a_2b_1)$$</p>
+<p>$$y=(a_1c_2-a_2c_1)/(a_1b_2-a_2b_1)$$</p>
 </div>
 
 <div class="example" data-embed="drawing/line" data-edit="https://codepen.io/kynd/pen/vmvVWN"></div>
@@ -55,8 +55,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/vs.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
 
-<script>window.MathJax = { MathML: { extensions: ["mml3.js", "content-mathml.js"]}};</script>
-<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=MML_HTMLorMML"></script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+</script>
 
 </body>
 </html>
