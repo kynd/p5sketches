@@ -28,7 +28,6 @@ function setup() {
   sticks.push(new VerletStick(points[2], points[4]));
   sticks.push(new VerletStick(points[3], points[4]));
   sticks.push(new VerletStick(points[1], points[4]));
-  sticks.push(new VerletStick(points[2], points[3]));
 
   sticks.push(new VerletStick(points[1], points[5]));
   sticks.push(new VerletStick(points[5], points[6]));
@@ -81,9 +80,7 @@ function draw() {
     let p1 = s.pb.screenPos;
     line(p0.x, p0.y, p1.x, p1. y);
   });
-  points.forEach((p)=>{
-    //drawCircleMarker(p.screenPos, 4);
-  });
+  //points.forEach((p)=>{drawCircleMarker(p.screenPos, 4);});
   pop();
 }
 

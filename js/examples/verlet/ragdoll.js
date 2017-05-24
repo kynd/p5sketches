@@ -26,7 +26,6 @@ function setup() {
   sticks.push(new VerletStick(points[2], points[4]));
   sticks.push(new VerletStick(points[3], points[4]));
   sticks.push(new VerletStick(points[1], points[4]));
-  sticks.push(new VerletStick(points[2], points[3]));
 
   sticks.push(new VerletStick(points[1], points[5]));
   sticks.push(new VerletStick(points[5], points[6]));
