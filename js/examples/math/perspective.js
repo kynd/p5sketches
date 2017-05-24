@@ -12,10 +12,10 @@ function draw() {
   let r1 = radians(frameCount + 135);
   let r2 = radians(frameCount + 225);
   let r3 = radians(frameCount + 315);
-  let p0 = createVector(0, Math.cos(r0), Math.sin(r0)).mult(radius);
-  let p1 = createVector(0, Math.cos(r1), Math.sin(r1)).mult(radius);
-  let p2 = createVector(0, Math.cos(r2), Math.sin(r2)).mult(radius);
-  let p3 = createVector(0, Math.cos(r3), Math.sin(r3)).mult(radius);
+  let p0 = createVector(0, cos(r0), sin(r0)).mult(radius);
+  let p1 = createVector(0, cos(r1), sin(r1)).mult(radius);
+  let p2 = createVector(0, cos(r2), sin(r2)).mult(radius);
+  let p3 = createVector(0, cos(r3), sin(r3)).mult(radius);
 
   let pp0 = project(p0, planeZ, cameraZ)
   let pp1 = project(p1, planeZ, cameraZ)
@@ -75,7 +75,7 @@ function draw() {
 }
 
 function project(v, nearClip, cameraZ) {
-  let r = Math.abs(cameraZ - nearClip) / Math.abs(cameraZ - v.z);
+  let r = abs(cameraZ - nearClip) / abs(cameraZ - v.z);
   return createVector(v.x * r, v.y * r);
   // Look up for Projection Matrix for more proper 3D projection
   // e.g. http://www.songho.ca/opengl/gl_projectionmatrix.html

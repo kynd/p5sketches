@@ -1,19 +1,19 @@
 function setup() {
-    canvas = createCanvas(windowWidth, windowHeight);
+  canvas = createCanvas(windowWidth, windowHeight);
 
-    degA = degB = degC = 0;
-    pA = createVector(0, -80);
-    pB = createVector(100, 0);
-    pC = createVector(-100, 100);
+  degA = degB = degC = 0;
+  pA = createVector(0, -80);
+  pB = createVector(100, 0);
+  pC = createVector(-100, 100);
 }
 
 function draw() {
   clear();
   let cx = width / 2, cy = height / 2;
 
-  let radA = radians(degA); // Math.PI * deg / 180;
-  let radB = radians(degB); // Math.PI * deg / 180;
-  let radC = radians(degC); // Math.PI * deg / 180;
+  let radA = radians(degA); // PI * deg / 180;
+  let radB = radians(degB); // PI * deg / 180;
+  let radC = radians(degC); // PI * deg / 180;
   let npA = rotate2d(pA, radA);
   let npB = rotate2d(pB, radB);
   let npC = rotate2d(pC, radC);

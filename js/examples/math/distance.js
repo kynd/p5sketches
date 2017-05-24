@@ -11,14 +11,14 @@ function draw() {
   let cx = width / 2, cy = height / 2;
   let t = frameCount - 1;
   let a0 = radians(t), a1 = radians(t * 2), a2 = radians(t * 3), a3 = radians(t * 4);
-  p.x = Math.cos(a0) * 150;
-  p.y = Math.sin(a3) * 100;
-  q.x = -Math.cos(a1) * 150;
-  q.y = -Math.sin(a2) * 100;
+  p.x = cos(a0) * 150;
+  p.y = sin(a3) * 100;
+  q.x = -cos(a1) * 150;
+  q.y = -sin(a2) * 100;
 
   // see also p5.Vector.dist()
   // https://p5js.org/reference/#/p5.Vector/dist
-  let distance = Math.sqrt((p.x - q.x) * (p.x - q.x) + (p.y - q.y) * (p.y - q.y));
+  let distance = sqrt((p.x - q.x) * (p.x - q.x) + (p.y - q.y) * (p.y - q.y));
 
   background(245, 177, 217);
 
@@ -56,6 +56,6 @@ function drawSquareMarker(p, size) {
 }
 
 function drawTriangleMarker(p, size) {
-  let r3 = Math.sqrt(3) / 3 * size;
+  let r3 = sqrt(3) / 3 * size;
   triangle(p.x, p.y - r3 * 2, p.x - size, p.y + r3, p.x + size, p.y + r3);
 }

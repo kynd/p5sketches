@@ -1,13 +1,12 @@
 let record, max;
 let resolution = 150;
-initRecord();
-
-for (let i = 0; i < resolution * 10; i ++) {
-  nextRandom();
-}
 
 function setup() {
-    canvas = createCanvas(windowWidth, windowHeight);
+  initRecord();
+  for (let i = 0; i < resolution * 10; i ++) {
+    nextRandom();
+  }
+  canvas = createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
@@ -51,7 +50,7 @@ function nextRandom() {
   // Box-Muller Transform
   // avoiding log(0) by using (1 - Math.random())
   let mean = 0.5, variance = 0.1;
-  let v = Math.sqrt(-2 * Math.log(1 - Math.random())) * Math.cos(2 * Math.PI * Math.random()) * variance + mean;
-  if (++record[Math.floor(v * resolution)] > max) {max ++};
+  let v = sqrt(-2 * log(1 - random(1))) * cos(2 * PI * random(1)) * variance + mean;
+  if (++record[floor(v * resolution)] > max) {max ++};
   return v;
 }

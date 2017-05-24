@@ -1,13 +1,12 @@
 let record, max;
 let resolution = 150;
-initRecord();
-
-for (let i = 0; i < resolution * 10; i ++) {
-  nextRandom();
-}
 
 function setup() {
-    canvas = createCanvas(windowWidth, windowHeight);
+  for (let i = 0; i < resolution * 10; i ++) {
+    initRecord();
+    nextRandom();
+  }
+  canvas = createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
@@ -48,7 +47,7 @@ function initRecord() {
 }
 
 function nextRandom() {
-  let v = (Math.random() + Math.random()) / 2;
-  if (++record[Math.floor(v * resolution)] > max) {max ++};
+  let v = (random(1) + random(1)) / 2;
+  if (++record[floor(v * resolution)] > max) {max ++};
   return v;
 }

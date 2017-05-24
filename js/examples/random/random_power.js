@@ -1,14 +1,13 @@
 let n = 0.2;
 let record, max;
 let resolution = 150;
-initRecord();
-
-for (let i = 0; i < resolution * 10; i ++) {
-  nextRandom();
-}
 
 function setup() {
-    canvas = createCanvas(windowWidth, windowHeight);
+  initRecord();
+  for (let i = 0; i < resolution * 10; i ++) {
+    nextRandom();
+  }
+  canvas = createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
@@ -33,7 +32,7 @@ function draw() {
   fill(254, 253, 183);
   drawLabel((n < 1) ? width -16 : 16, height - 16, "n = " + n.toPrecision(2), (n < 1) ? RIGHT : LEFT);
 
-  n = (Math.floor(frameCount / 60) % 10 + 1) * 0.2;
+  n = (floor(frameCount / 60) % 10 + 1) * 0.2;
   if (frameCount % 60 == 0) {
     initRecord();
   }
@@ -53,8 +52,8 @@ function initRecord() {
 }
 
 function nextRandom() {
-  let v = Math.pow(Math.random(), n);
-  if (++record[Math.floor(v * resolution)] > max) {max ++};
+  let v = pow(random(1), n);
+  if (++record[floor(v * resolution)] > max) {max ++};
   return v;
 }
 

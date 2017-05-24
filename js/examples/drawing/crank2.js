@@ -6,7 +6,7 @@ function setup() {
     centerA = createVector(width * 0.25, height * 0.5);
     centerB = createVector(width * 0.5, height * 0.5);
     armLength = width * 0.5;
-    radiusA = Math.min(height * 0.2, centerA.dist(centerB) * 0.5);
+    radiusA = min(height * 0.2, centerA.dist(centerB) * 0.5);
     radiusB = radiusA * 0.5;
 }
 
@@ -16,8 +16,8 @@ function draw() {
 
   let aA = radians((frameCount - 1) * 2) + PI * 0.5;
   let aB = radians((frameCount - 1) * 5) - PI * 0.5;
-  let pA = createVector(Math.cos(aA) * radiusA, Math.sin(aA) * radiusA).add(centerA);
-  let pB = createVector(Math.cos(aB) * radiusB, Math.sin(aB) * radiusB).add(centerB);
+  let pA = createVector(cos(aA) * radiusA, sin(aA) * radiusA).add(centerA);
+  let pB = createVector(cos(aB) * radiusB, sin(aB) * radiusB).add(centerB);
   let arm = new LineSegment().fromTwoPointsAndLength(pA, pB, armLength);
   noFill();stroke(0);
 

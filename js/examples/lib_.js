@@ -50,9 +50,9 @@ function drawArrow(x0, y0, x1, y1) {
 function rotate2d(p, rad) {
   // see p5.Vector.rotate()
   // https://p5js.org/reference/#/p5.Vector/rotate
-  let sine = sin(rad);
-  let cosine = cos(rad);
-  return createVector(p.x * cosine + p.y * sine, -p.x * sine + p.y * cosine);
+  let sin = sin(rad);
+  let cos = cos(rad);
+  return createVector(p.x * cos + p.y * sin, -p.x * sin + p.y * cos);
 }
 
 function rotate3d(v, axis, angle) {
@@ -152,7 +152,7 @@ class Line {
   draw(rect) {
     if (!rect) { rect = {x:0, y:0, w:0, h:0}}
     let l0, l1;
-    if (abs(this.a) > abs(this.b)) {
+    if (Math.abs(this.a) > abs(this.b)) {
       l0 = new Line().fromTwoPoints({x:rect.x, y:rect.y}, {x:rect.x + width, y:rect.y});
       l1 = new Line().fromTwoPoints({x:rect.x, y:rect.y + height}, {x:rect.x + width,   y:height});
     } else {

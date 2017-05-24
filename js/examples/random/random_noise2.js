@@ -2,10 +2,10 @@ let record = [], x = 0;
 let resolution = 150;
 
 function setup() {
-    canvas = createCanvas(windowWidth, windowHeight);
-    for (let i = 0; i < resolution * 10; i ++) {
-      nextRandom();
-    }
+  for (let i = 0; i < resolution * 10; i ++) {
+    nextRandom();
+  }
+  canvas = createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {

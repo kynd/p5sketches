@@ -13,7 +13,7 @@ function draw() {
   background(0, 171, 107);
 
   let a = radians((frameCount - 1) * 4);
-  let p = createVector(Math.cos(a) * radius, Math.sin(a) * radius).add(center);
+  let p = createVector(cos(a) * radius, sin(a) * radius).add(center);
   let circle = new Circle().fromCenterAndRadius(p, armLength);
   let intersections = circle.getIntersectionPoints(centerLine);
   let pistonBottom = intersections[0];
