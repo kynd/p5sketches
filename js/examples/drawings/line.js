@@ -38,10 +38,6 @@ function draw() {
   }
 }
 
-function signedNoise(x, y, z) {
-  return (noise(x, y, z) - 0.5) * 2;
-}
-
 /** signedNoise **/
 
 /** Line **/

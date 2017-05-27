@@ -98,6 +98,32 @@ function signedNoise(x, y, z) {
   return (noise(x, y, z) - 0.5) * 2;
 }
 
+function plotGraph(data, ox, oy, w, h, minX, maxX, minY, maxY, currentX, xLabel, yLabel) {
+  let left = ox - minX / (maxX - minX) * w;
+  let top = oy - maxY / (maxY - minY) * h;
+  let labelLeft = abs(left - ox) > abs(left + w - ox);
+  let labelTop = abs(top - oy) > abs(top + h - oy);
+
+  push();
+
+  noFill(); stroke(0);
+  line(left, oy, left + w, oy);
+  line(ox, top, ox, top + h);
+
+  beginShape();
+  for (let i = 0; i < data.length; i ++) {
+    let x = ox + data[i].x / (maxX - minX) * w;
+    let y = oy - data[i].y / (maxY - minY) * h;
+    vertex(x, y);
+  }
+  endShape();
+
+  fill(0);
+  drawLabel(labelLeft ? left : left + w, oy + (labelTop ? 16 : -8), xLabel, labelLeft ?  LEFT : RIGHT);
+  drawLabel(ox, labelTop ? top : top + h, yLabel, labelLeft ?  RIGHT : LEFT);
+  pop();
+}
+
 class Line {
   constructor(a, b, c) {
     this.a = a;
@@ -151,6 +177,10 @@ class Line {
 
   getPerpendicular(p) {
     return new Line(this.b, -this.a, this.a * p.y - this.b * p.x);
+  }
+
+  getParallel(p) {
+    return new Line(this.a, this.b, -this.a * p.x - this.b * p.y);
   }
 
   getNearestPoint(p) {
@@ -242,11 +272,15 @@ class LineSegment {
   }
 
   getMidPoint() {
-    return (this.p0 + this.p1) / 2;
+    return this.p0.copy().add(this.p1).mult(0.5);
   }
 
   getPerpendicular(p) {
     return this.toLine().getPerpendicular(p);
+  }
+
+  getParallel(p) {
+    return this.toLine().getParallel(p);
   }
 
   draw() {
@@ -474,3 +508,25 @@ class VerletStick {
 }
 
 window.VerletStick = VerletStick;
+
+class Body { // Newtonian Physics Object
+  constructor(m) {
+    this.position = createVector(0, 0, 0);
+    this.velocity = createVector(0, 0, 0);
+    this.mass = m;
+  }
+
+  applyForce(f, t) {
+    this.velocity.add(f.copy().mult(t / this.mass));
+  }
+
+  update(t) {
+    this.position.add(this.velocity.copy().mult(t))
+  }
+
+  draw() {
+    ellipse(this.position.x, this.position.y, 8, 8);
+  }
+}
+
+window.Body = Body;

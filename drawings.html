@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<title>Geometric Drawings</title>
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Fredericka+the+Great|Open+Sans:300,400|Roboto+Mono:300" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="header"><div class="example" data-embed="drawings/excenter"></div></div>
+<div id="main">
+
+<h1>Geometric Drawings</h1>
+<p><a href="index.html">Sketching with Math and Quasi Physics</a></p>
+
+<h2>Lines</h2>
+<p>Two lines,<span class="math-wrapper">
+  \(a_1x+by_1+\;c_1=0\)</span>
+  and
+  <span class="math-wrapper">\(a_2x+by_2+\;c_2=0\)</span>
+  intersect if
+  <span class="math-wrapper">\(a_1b_2\neq a_2b_1\)</span>
+</p>
+<p>The point of intersection is</p>
+<div class="math-wrapper">
+<p>$$x=(b_1c_2-b_2c_1)/(a_1b_2-a_2b_1)$$</p>
+<p>$$y=(a_1c_2-a_2c_1)/(a_1b_2-a_2b_1)$$</p>
+</div>
+
+<div class="example" data-embed="drawings/line" data-edit="https://codepen.io/kynd/pen/vmvVWN"></div>
+
+<h2>Line Segments</h2>
+<div class="example" data-embed="drawings/line_segments" data-edit="https://codepen.io/kynd/pen/qmLJVe"></div>
+
+<h2>Circle</h2>
+<div class="example" data-embed="drawings/circle" data-edit="https://codepen.io/kynd/pen/pPqxaV"></div>
+
+<h2>Circumcircle and Circumcenter</h2>
+<p>
+<dl>
+  <dt>Circumcircle</dt>
+  <dd>The circle that passes through three vertices of a triangle.</dd>
+  <dt>Circumcenter</dt>
+  <dd>The center of the circumcircle. The intersection of the perpendicular bisectors of a triangle.</dd>
+</dl>
+</p>
+<div class="example" data-embed="drawings/circumcenter" data-edit="https://codepen.io/kynd/pen/xdNwBv"></div>
+
+<h2>Incircle and Incenter</h2>
+<p>
+<dl>
+  <dt>Incircle</dt>
+  <dd>The circle tangent to the three sides of a triangle.</dd>
+  <dt>Incenter</dt>
+  <dd>The center of the incircle. The intersection of angle bisectors of a triangle.</dd>
+</dl>
+</p>
+<div class="example" data-embed="drawings/incenter" data-edit="https://codepen.io/kynd/pen/LyopoV"></div>
+
+<h2>Excircles and Excenters</h2>
+<p>
+<dl>
+  <dt>Excircles</dt>
+  <dd>The circles tangent to one of a triangle's sides and to the extensions of the other two.</dd>
+  <dt>Excenters</dt>
+  <dd>The centers of an excircles. Points where the external angle bisectors of a triangle intersect.</dd>
+</dl>
+</p>
+
+<div class="example" data-embed="drawings/excenter" data-edit="https://codepen.io/kynd/pen/dWEGYX"></div>
+
+<h2>Orthocenter</h2>
+<p>
+<dl>
+  <dt>Orthocenter</dt>
+  <dd>The intersection of the three altitudes of a triangle.</dd>
+</dl>
+</p>
+<div class="example" data-embed="drawings/orthocenter" data-edit="https://codepen.io/kynd/pen/gWJPax"></div>
+
+<h2>Centroid</h2>
+<p>
+<dl>
+  <dt>Centroid</dt>
+  <dd>The arithmetic mean position of all the points in a shape. The centroid of a triangle is the intersection of its three medians.</dd>
+</dl>
+</p>
+<div class="example" data-embed="drawings/centroid" data-edit="https://codepen.io/kynd/pen/qmGbbO"></div>
+
+<h2>Reuleaux Triangle</h2>
+<p>
+A reuleaux triangle can rotate within a square while touching all four sides of a square.
+</p>
+<div class="example" data-embed="drawings/reuleaux" data-edit="https://codepen.io/kynd/pen/NjVxxM"></div>
+
+
+<p><a href="index.html">index</a></p>
+<footer><a href="https://twitter.com/kyndinfo">kynd</a> 2017 | Please suggest edits and/or better code at <a href="https://github.com/kynd/p5sketches">Github</a></footer>
+</div>
+
+<script src="js/main.js" type="text/javascript"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/vs.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+</body>
+</html>
