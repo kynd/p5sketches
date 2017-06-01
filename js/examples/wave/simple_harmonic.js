@@ -1,6 +1,6 @@
 let msec = 0, prevInitMsec = 0, prevNow = 0;
-let plotMode = -1, plotLabels = ["position(y)", "velocity(y)", "acceralation(y)"], plotStartMsec = 0, plotData = [];
-let paramMode = -1, tention = 1, friction = 0.0;
+let plotData = [];
+let tention = 1, friction = 0.0;
 let ball;
 
 function setup() {
@@ -11,13 +11,12 @@ function setup() {
 
 function draw() {
   clear();
-  background(180, 235, 190);
+  background(224, 239, 243);
 
   ellapseTime();
 
-  let minWH = min(width, height);
   push();
-  translate(min((width - minWH) / 2 + 32, width / 4) , height / 2);
+  translate(32, height / 2);
   fill(250, 170, 165); stroke(0);
   ellipse(0, ball.position.y, 24, 24);
 
@@ -33,15 +32,11 @@ function draw() {
     vertex(x, y);
   }
   endShape();
-
   pop();
 
-  let graphW = minWH - 64;
-  let graphX = (width - graphW) / 2 + 32;
-  plotGraph(plotData, graphX, height / 2, graphW, height - 64, 0, 10000, -height / 2 + 32, height / 2 - 32, "time", plotLabels[plotMode]);
-
-  drawLabel(graphX + graphW, 40, "tention: " + tention, RIGHT);
-  drawLabel(graphX + graphW, 56, "friction: " + friction, RIGHT);
+  let graphW = width - 64;
+  let graphX = 64;
+  plotGraph(plotData, graphX, height / 2, graphW, height - 64, 0, 20 * graphW, -height / 2 + 32, height / 2 - 32, "time", "y");
 }
 
 function ellapseTime() {
@@ -55,33 +50,19 @@ function ellapseTime() {
     secondsRemaining -= maxStepSize;
   }
 
-  if (msec > prevInitMsec + 10000) {
+  if (msec > prevInitMsec + 20 * (width - 64)) {
     ball = new Body(1);
     ball.position.y = 100;
     plotData = [];
-    prevInitMsec += 10000;
+    prevInitMsec += 20 * (width - 64);
   }
 
   if (plotData.length == 0) {
     plotStartMsec = msec;
-    plotMode = (plotMode + 1) % 3;
-
-    if (plotMode == 0) {
-      paramMode = (paramMode + 1) % 3;
-      switch(paramMode) {
-        case 0: tention = 1; friction = 0; break;
-        case 1: tention = 4; friction = 0.5; break;
-        case 2: tention = 2; friction = 1.5; break;
-      }
-    }
   }
 
   let plotMsec = (msec - plotStartMsec);
-  switch(plotMode) {
-    case 0: plotData.push({x:plotMsec, y: -ball.position.y}); break;
-    case 1: plotData.push({x:plotMsec, y: -ball.velocity.y}); break;
-    case 2: plotData.push({x:plotMsec, y: -getForce(ball).y}); break;
-  }
+  plotData.push({x:plotMsec, y: -ball.position.y});
 }
 
 function updateSimulation(t) {

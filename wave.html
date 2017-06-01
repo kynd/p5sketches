@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<title>Waverider</title>
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Fredericka+the+Great|Open+Sans:300,400|Roboto+Mono:300" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="header"><div class="example" data-embed="wave/square_wave"></div></div>
+<div id="main">
+
+<h1>Waverider</h1>
+<p><a href="index.html">Sketching with Math and Quasi Physics</a></p>
+
+<h2>Sine Wave</h2>
+<div class="example" data-embed="wave/sine_wave" data-edit="https://codepen.io/kynd/pen/BRMmGO"></div>
+
+<h2>Square Wave (Additive Synthesis)</h2>
+<div class="math-wrapper"><p>
+$${\displaystyle {\begin{aligned}x_{\text{square}}(t)&={\frac {4}{\pi }}\sum _{k=1}^{\infty }{\frac {\sin \left(2\pi (2k-1)ft\right)}{2k-1}}\\&={\frac {4}{\pi }}\left(\sin(2\pi ft)+{\frac {1}{3}}\sin(6\pi ft)+{\frac {1}{5}}\sin(10\pi ft)+\dots \right)\end{aligned}}}$$</p></div>
+<div class="example" data-embed="wave/square_wave" data-edit="https://codepen.io/kynd/pen/BRMmGO"></div>
+
+<h2>Triangle Wave (Additive Synthesis)</h2>
+<div class="math-wrapper"><p>
+$${\displaystyle {\begin{aligned}x_{{\mathrm  {triangle}}}(t)&{}={\frac  {8}{\pi ^{2}}}\sum _{{k=0}}^{\infty }(-1)^{k}\,{\frac  {\sin \left(2\pi (2k+1)ft\right)}{(2k+1)^{2}}}\\&{}={\frac  {8}{\pi ^{2}}}\left(\sin(2\pi ft)-{1 \over 9}\sin(6\pi ft)+{1 \over 25}\sin(10\pi ft)-\cdots \right)\end{aligned}}}$$</p></div>
+<div class="example" data-embed="wave/triangle_wave" data-edit="https://codepen.io/kynd/pen/BRMmGO"></div>
+
+<h2>Sawtooth Wave (Additive Synthesis)</h2>
+<div class="math-wrapper"><p>
+$${\displaystyle x_{\mathrm {reversesawtooth} }(t)={\frac {2}{\pi }}\sum _{k=1}^{\infty }{(-1)}^{k}{\frac {\sin(2\pi kft)}{k}}}$$</p>
+<p>$${\displaystyle x_{\mathrm {sawtooth} }(t)={\frac {1}{2}}-{\frac {1}{\pi }}\sum _{k=1}^{\infty }{(-1)}^{k}{\frac {\sin(2\pi kft)}{k}}}$$</p></div>
+<div class="example" data-embed="wave/saw_wave" data-edit="https://codepen.io/kynd/pen/BRMmGO"></div>
+
+<h2>Simple Harmonic Motion</h2>
+<p>Simple harmonic motion is a type of periodic motion where the restoring force obeys Hooke's Law (
+<span class="math-wrapper">\(\mathbf F=-k\mathbf x\)</span>). The motion is sinusoidal in time and demonstrates a single resonant frequency.</p>
+<div class="example" data-embed="wave/simple_harmonic" data-edit="https://codepen.io/kynd/pen/BRMmGO"></div>
+
+<h2>Wave Equation</h2>
+
+<div class="math-wrapper">
+<h3>One dimension</h3>
+<p>$${\displaystyle {\partial ^{2}u \over \partial t^{2}}=c^{2}{\partial ^{2}u \over \partial x^{2}}}$$</p>
+<h3>Approximation in Code</h3>
+<div><p>$$\frac{\partial^2u}{\partial t^2}\Rightarrow\;(u_{t+1}-u_t)\;-\;(u_{t-1}-u_t)\;=\;u_{t+1}\;+\:u_{t+2\;}-\;2u_t$$</p></div>
+<div><p>$$c^2\frac{\partial^2u}{\partial x^2}\Rightarrow\;c^2\left[(u_{x-1}-u_x)\;-\;(u_{x+1}-u_x)\right]\;=\;c^2(u_{x-1}\;+u_{x+1\;}-\;2u_x)$$</p></div>
+<div><p>$$u_{t+1}\;+\:u_{t+2\;}-\;2u_t＝\;c^2(u_{x-1}\;+u_{x+1\;}-\;2u_x)$$</p></div>
+<div><p style="border-bottom: double 3px #000000;">$$u_{t+1}\;＝\;2u_t\;\;+\;c^2(u_{x-1}\;+u_{x+1\;}-\;2u_x)\;-\:u_{t+2\;}$$</p></div>
+</div>
+<div class="example" data-embed="wave/wave_equation" data-edit="https://codepen.io/kynd/pen/BRMmGO"></div>
+
+
+<p><a href="index.html">index</a></p>
+<footer><a href="https://twitter.com/kyndinfo">kynd</a> 2017 | Please suggest edits and/or better code at <a href="https://github.com/kynd/p5sketches">Github</a></footer>
+</div>
+
+<script src="js/main.js" type="text/javascript"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/vs.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+</body>
+</html>

@@ -20,4 +20,4 @@ setup = function() {
 }
 
 
-//saveCanvas('output' + frameCount, 'jpg');
+//saveCanvas('output' + frameCount, 'png');

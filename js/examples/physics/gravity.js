@@ -23,7 +23,7 @@ function draw() {
   pop();
 
   let graphW = minWH - 64;
-  plotGraph(plotData, (width - graphW) / 2 + 32, 32, graphW, height - 64, 0, 8000, -(height - 64), 0, plotStartMsec, "time", plotLabels[plotMode]);
+  plotGraph(plotData, (width - graphW) / 2 + 32, 32, graphW, height - 64, 0, 8000, -(height - 64), 0, "time", plotLabels[plotMode]);
 }
 
 function ellapseTime() {

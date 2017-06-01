@@ -1,3 +1,9 @@
+function saveCanvasInterval(n = 2) {
+  if ((frameCount - 1) % n == 0) {
+    saveCanvas('output' + (frameCount - 1) / n, 'png');
+  }
+}
+
 function drawLineWithLabel(x0, y0, x1, y1, label, align = CENTER) {
   line(x0, y0, x1, y1);
   let mx = (x0 + x1) / 2, my = (y0 + y1) / 2;
@@ -98,7 +104,7 @@ function signedNoise(x, y, z) {
   return (noise(x, y, z) - 0.5) * 2;
 }
 
-function plotGraph(data, ox, oy, w, h, minX, maxX, minY, maxY, currentX, xLabel, yLabel) {
+function plotGraph(data, ox, oy, w, h, minX, maxX, minY, maxY, xLabel, yLabel) {
   let left = ox - minX / (maxX - minX) * w;
   let top = oy - maxY / (maxY - minY) * h;
   let labelLeft = abs(left - ox) > abs(left + w - ox);
