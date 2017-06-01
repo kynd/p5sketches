@@ -18,6 +18,3 @@ setup = function() {
   canvas.touchStarted(function() {__parent.focusExample(window)});
   __ready = true;
 }
-
-
-//saveCanvas('output' + frameCount, 'png');

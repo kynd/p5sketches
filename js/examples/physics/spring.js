@@ -38,6 +38,7 @@ function draw() {
 
   let graphW = minWH - 64;
   let graphX = (width - graphW) / 2 + 32;
+
   plotGraph(plotData, graphX, height / 2, graphW, height - 64, 0, 10000, -height / 2 + 32, height / 2 - 32, "time", plotLabels[plotMode]);
 
   drawLabel(graphX + graphW, 40, "tention: " + tention, RIGHT);

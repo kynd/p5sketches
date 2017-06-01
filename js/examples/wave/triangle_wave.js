@@ -63,3 +63,5 @@ function draw() {
 /** plotGraph **/
 
 /** drawLabel **/
+
+/** drawCircleMarker **/
