@@ -65,7 +65,7 @@ function drawGraph(idx) {
   for (let i = 0; i <= tmax; i ++) {
     drawCircleMarker(createVector(i * w / tmax, 0), 2);
 
-    drawLabel(i * w / tmax, 16, "t = " + i);
+    drawLabel(i * w / tmax, 16, "x = " + i);
   }
 
   drawLabel(0, -h - 8, "B i,n(t)");
