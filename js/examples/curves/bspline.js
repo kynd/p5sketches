@@ -68,7 +68,7 @@ function drawGraph(idx) {
     drawLabel(i * w / tmax, 16, "x = " + i);
   }
 
-  drawLabel(0, -h - 8, "B i,n(t)");
+  drawLabel(0, -h - 8, "B i,n(x)");
   pop();
 }
 
