@@ -15,15 +15,12 @@ function setup() {
     p.push(createVector(pDef[i][0], pDef[i][1]));
   }
 
-  for (let n = 0; n <= 3; n ++) {
+  for (let i = 0; i < p.length; i ++) {
     b.push([]);
-    for (let i = 0; i < p.length; i ++) {
-      b[n].push([]);
-      for (let j = tmin; j <= tmax * resolution; j += 1) {
-        let x = j / resolution;
-        if (x >= tmax) { x = tmax - 0.00001; }
-        b[n][i].push(bN(i, n, x));
-      }
+    for (let j = tmin; j <= tmax * resolution; j += 1) {
+      let x = j / resolution;
+      if (x >= tmax) { x = tmax - 0.00001; }
+      b[i].push(bN(i, n, x));
     }
   }
 }
@@ -33,26 +30,26 @@ function draw() {
   background(15, 243, 208);
 
   let interval = 30;
-  let len = b[0][0].length + interval;
+  let len = b[0].length + interval;
   let f = frameCount - 1;
   if (f % len == 0) { log = []; }
-  let idx = constrain(f % len - interval / 2, 0, b[0][0].length - 1);
+  let idx = constrain(f % len - interval / 2, 0, b[0].length - 1);
 
-  drawGraph(n, idx);
-  drawCurve(n, idx);
+  drawGraph(idx);
+  drawCurve(idx);
 }
 
-function drawGraph(n , idx) {
+function drawGraph(idx) {
   noFill(); stroke(0);
   let w = width * 0.6, h = height * 0.2;
   let x = (width - w) / 2, y = height - 32;
 
   push();
   translate(x, y);
-  for (let i = 0; i < b[n].length; i ++) {
+  for (let i = 0; i < b.length; i ++) {
     beginShape();
-    for (let j = 0; j < b[n][i].length; j ++) {
-      let v = b[n][i][j];
+    for (let j = 0; j < b[i].length; j ++) {
+      let v = b[i][j];
       vertex(j / resolution * w / tmax, -v * h);
     }
     endShape();
@@ -60,26 +57,28 @@ function drawGraph(n , idx) {
   line(idx / resolution * w / tmax, 0, idx / resolution * w / tmax, -h);
 
   fill(0);
-  for (let i = 0; i < b[n].length; i ++) {
-    let v = b[n][i][idx];
+  for (let i = 0; i < b.length; i ++) {
+    let v = b[i][idx];
     drawCircleMarker(createVector(idx / resolution * w / tmax, -v * h), 2);
   }
 
   for (let i = 0; i <= tmax; i ++) {
     drawCircleMarker(createVector(i * w / tmax, 0), 2);
+
+    drawLabel(i * w / tmax, 16, "t = " + i);
   }
 
-  drawLabel(0, 16, "B(i,n)", LEFT);
+  drawLabel(0, -h - 8, "B i,n(t)");
   pop();
 }
 
 
-function drawCurve(n, idx) {
+function drawCurve(idx) {
   fill(0); stroke(0);
   let s = createVector(width * 0.4, height * 0.2); // scale
 
   push();
-  translate(width / 2, height / 5 * 2);
+  translate(width / 2, height / 3 * 1);
 
   for (let i = 0; i < p.length; i ++) {
     drawCircleMarker(createVector(p[i].x * s.x, p[i].y * s.y), 3);
@@ -92,7 +91,7 @@ function drawCurve(n, idx) {
   let pt = createVector();
   let v = [];
   for (let i = 0; i < p.length; i ++) {
-    v.push(b[n][i][idx]);
+    v.push(b[i][idx]);
     pt.add(p[i].copy().mult(v[i]))
   }
 
