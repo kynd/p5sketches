@@ -4,8 +4,8 @@ function setup() {
 }
 
 function draw() {
-  //clear();
-  background(62, 120, 252);
+  clear();
+  background(72, 140, 255);
   let t = ((frameCount - 1) % 180) / 180;
   if (t == 0) {
       cLog = [];

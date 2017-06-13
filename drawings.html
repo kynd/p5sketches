@@ -52,7 +52,7 @@
 <p>$$=(1-t)^{3}\mathbf {P} _{0}+3(1-t)^{2}t\mathbf {P} _{1}+3(1-t)t^{2}\mathbf {P} _{2}+t^{3}\mathbf {P} _{3}{\mbox{ , }}0\leq t\leq 1$$</p>
 </div>
 
-<div class="example" data-embed="curves/bezier" data-edit="https://codepen.io/kynd/pen/bREZXv"></div>
+<div class="example" data-embed="drawings/bezier" data-edit="https://codepen.io/kynd/pen/bREZXv"></div>
 
 <h2>B-Spline Curve</h2>
 <div class="math-wrapper"><p>\(P\) is a set of control points and \(t\) is a vector of non-decreasing numbers called "knot vector" which has \(number\;of\;control\;points\;+\;order\;of\;the\;curve(n)\;+\;1\) elements, e.g. \((0, 0, 0, 1, 2, 3, 3, 3)\). </p><p>B-spline basis function, \(B\) is defined on the knot vector and used to weight the control points.</p>
@@ -64,7 +64,7 @@
   <p>$$\begin{array}{lc}0&otherwise\end{array}$$</p></div>
 <div class="math-wrapper"><p>$${\displaystyle B_{i,k}(x):={\frac {x-t_{i}}{t_{i+k}-t_{i}}}B_{i,k-1}(x)+{\frac {t_{i+k+1}-x}{t_{i+k+1}-t_{i+1}}}B_{i+1,k-1}(x)}$$</p></div>
 
-<div class="example" data-embed="curves/bspline" data-edit="https://codepen.io/kynd/pen/awNpKx"></div>
+<div class="example" data-embed="drawings/bspline" data-edit="https://codepen.io/kynd/pen/awNpKx"></div>
 
 <h3>Learn more</h3>
 <p><a href="https://www.cs.mtu.edu/~shene/COURSES/cs3621/NOTES/spline/B-spline/bspline-basis.html" target="_blank">B-spline Basis Functions: Definition</a></p>
@@ -128,6 +128,8 @@ A reuleaux triangle can rotate within a square while touching all four sides of 
 </p>
 <div class="example" data-embed="drawings/reuleaux" data-edit="https://codepen.io/kynd/pen/NjVxxM"></div>
 
+<h2>Spinner</h2>
+<div class="example" data-embed="drawings/spinner" data-edit="https://codepen.io/kynd/pen/xrOMbO"></div>
 
 <p><a href="index.html">index</a></p>
 <footer><a href="https://twitter.com/kyndinfo">kynd</a> 2017 | Please suggest edits and/or better code at <a href="https://github.com/kynd/p5sketches">Github</a></footer>
