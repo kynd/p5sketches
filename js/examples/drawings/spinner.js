@@ -11,7 +11,7 @@ function draw() {
 
   let f = frameCount - 1;
 
-  if (f % 180 > 90) {
+  if (f % 180 >= 90) {
     for (let i = 0; i < lines.length; i ++) {
       lines[i].shift(); lines[i].shift();
     }
