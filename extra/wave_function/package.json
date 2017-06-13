@@ -1,0 +1,29 @@
+{
+  "name": "wave_function",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "browserify": {
+    "transform": [
+      "glslify"
+    ]
+  },
+  "scripts": {
+    "start": "budo -H 127.0.0.1 -p 9000 --title wave index.js:bundle.js --open --live",
+    "bundle": "browserify index.js -o bundle.js"
+  },
+  "devDependencies": {
+    "browserify": "*",
+    "budo": "*"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "a-big-triangle": "^1.0.3",
+    "gl-clear": "^2.0.0",
+    "gl-fbo": "^2.0.5",
+    "gl-now": "^1.4.0",
+    "gl-shader": "^4.2.1",
+    "glslify": "^6.1.0"
+  }
+}

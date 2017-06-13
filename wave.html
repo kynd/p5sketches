@@ -12,7 +12,7 @@
 <div id="header"><div class="example" data-embed="wave/square_wave"></div></div>
 <div id="main">
 
-<h1>Waverider</h1>
+<h1>Wave Anatomy</h1>
 <p><a href="index.html">Sketching with Math and Quasi Physics</a></p>
 
 <h2>Sine Wave</h2>
@@ -45,13 +45,24 @@ $${\displaystyle x_{\mathrm {reversesawtooth} }(t)={\frac {2}{\pi }}\sum _{k=1}^
 <h3>One dimension</h3>
 <p>$${\displaystyle {\partial ^{2}u \over \partial t^{2}}=c^{2}{\partial ^{2}u \over \partial x^{2}}}$$</p>
 <h3>Approximation in Code</h3>
-<div><p>$$\frac{\partial^2u}{\partial t^2}\Rightarrow\;(u_{t+1}-u_t)\;-\;(u_{t-1}-u_t)\;=\;u_{t+1}\;+\:u_{t+2\;}-\;2u_t$$</p></div>
+<div><p>$$\frac{\partial^2u}{\partial t^2}\Rightarrow\;(u_{t+1}-u_t)\;-\;(u_{t-1}-u_t)\;=\;u_{t+1}\;+\:u_{t-1\;}-\;2u_t$$</p></div>
 <div><p>$$c^2\frac{\partial^2u}{\partial x^2}\Rightarrow\;c^2\left[(u_{x-1}-u_x)\;-\;(u_{x+1}-u_x)\right]\;=\;c^2(u_{x-1}\;+u_{x+1\;}-\;2u_x)$$</p></div>
-<div><p>$$u_{t+1}\;+\:u_{t+2\;}-\;2u_t＝\;c^2(u_{x-1}\;+u_{x+1\;}-\;2u_x)$$</p></div>
-<div><p style="border-bottom: double 3px #000000;">$$u_{t+1}\;＝\;2u_t\;\;+\;c^2(u_{x-1}\;+u_{x+1\;}-\;2u_x)\;-\:u_{t+2\;}$$</p></div>
+<div><p>$$u_{t+1}\;+\:u_{t-1\;}-\;2u_t＝\;c^2(u_{x-1}\;+u_{x+1\;}-\;2u_x)$$</p></div>
+<div><p style="border-bottom: double 3px #000000;">$$u_{t+1}\;＝\;2u_t\;\;+\;c^2(u_{x-1}\;+u_{x+1\;}-\;2u_x)\;-\:u_{t-1\;}$$</p></div>
 </div>
 <div class="example" data-embed="wave/wave_equation" data-edit="https://codepen.io/kynd/pen/jwNBZa"></div>
 
+<h3>Two dimensions</h3>
+
+<div class="row">
+<div><img src="extra/wave_function/screenshot.png" style="max-width: 240px"></div>
+<div>
+<div class="math-wrapper">
+<p>$$\frac{\partial^2u}{\partial t^2}=c^2\left(\frac{\partial^2u}{\partial x^2}\;+\;\frac{\partial^2u}{\partial y^2}\right)$$</p>
+<p>$$\Rightarrow u_{t+1}\;＝\;2u_t\;\;+\;c^2(u_{x-1}\;+u_{x+1\;}+u_{y-1}\;+u_{y+1\;}-\;4u_x)\;-\:u_{t-1\;}$$</p>
+<p><a href="extra/wave_function/index.html" target="_blank">Open WebGL Demo</a></p>
+</div></div>
+</div>
 
 <p><a href="index.html">index</a></p>
 <footer><a href="https://twitter.com/kyndinfo">kynd</a> 2017 | Please suggest edits and/or better code at <a href="https://github.com/kynd/p5sketches">Github</a></footer>

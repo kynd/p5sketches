@@ -74,6 +74,19 @@ footer { font-size: 0.8em; line-height: 1.5em; text-align:right;
 font-family:  'Open Sans', sans-serif; font-weight: 300;
 margin:64px 0px 24px 0px; padding-top: 12px; border-top: solid 1px #DDDDDD; }
 
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.row div:first-child {
+  flex: 1 1;
+}
+
+.row div {
+  flex: 3 3;
+}
+
 @media (max-width: 540px) {
   .example {height: 400px; }
   .example iframe { height: 400px; }
