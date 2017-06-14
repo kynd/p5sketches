@@ -46,6 +46,8 @@ border-radius: 4px; padding: 2px 4px 2px 4px; }
 
 a.button:hover { border: dashed 1px #2962ff; }
 
+a.button:first-child { margin-left: 0; }
+
 
 
 .hidden { display: none; }
