@@ -151,6 +151,11 @@ class Line {
     return this.fromTwoPoints(p0, p1);
   }
 
+  fromPointAndVector(p0, v) {
+    let p1 = {x: p0.x + v.x, y: p0.y + v.y};
+    return this.fromTwoPoints(p0, p1);
+  }
+
   intersects(o) {
     if (o instanceof Line) {
       let d = this.a * o.b - o.a * this.b;

@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<title>Detecting Collision</title>
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Fredericka+the+Great|Open+Sans:300,400|Roboto+Mono:300" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="header"><div class="example" data-embed="collision/collision_triangles"></div></div>
+
+<div id="main">
+<h1>Detecting Collision</h1>
+<p><a href="index.html">Sketching with Math and Quasi Physics</a></p>
+
+<h2>Circles</h2>
+<p>Two circles, <span class="math-wrapper">
+\(A\)</span> and <span class="math-wrapper">
+\(B\)</span> collide if <a href="handy_math.html#distance">the distance between the center points</a> is equal or less than the two radii added together.</p>
+<div class="math-wrapper">
+<p>$$distance(A_{center},B_{center}) \leq A_{radius}+B_{radius}\Rightarrow$$</p>
+<p>$$distance(A_{center},B_{center})-A_{radius}-B_{radius}\leq 0$$</p>
+</div>
+
+<div class="example" data-embed="collision/collision_circles" data-edit="https://codepen.io/kynd/pen/MorWPr"></div>
+
+<h2>Rectangles</h2>
+<p>Two rectangles, <span class="math-wrapper">
+\(A\)</span> and <span class="math-wrapper">
+\(B\)</span> that are axis aligned collide if</p>
+<div class="math-wrapper">
+<p>$$(A_{left}\leq B_{right})\;\wedge\;(A_{right}\geq B_{left})\;\wedge\;(A_{top}\leq B_{bottom})\wedge(A_{bottom}\geq B_{top})$$</p>
+</div>
+<p>This is to project the shapes to x and y-axis and checking overlap on each axis. Note that screen coordinate system in which y increase from top to bottom is assumed.</p>
+
+<div class="example" data-embed="collision/collision_rectangles" data-edit="https://codepen.io/kynd/pen/eRyYLV"></div>
+
+
+<h2>Triangles</h2>
+<p>Similarly, collision between two convex polygons can be detected by <a href="handy_math.html#dot_product">projecting the shapes to the vectors</a> perpendicular to each side of one of the polygons.</p>
+
+<div class="example" data-embed="collision/collision_triangles" data-edit="https://codepen.io/kynd/pen/GEyRXg"></div>
+
+<h3>Learn More</h3>
+<p><a href="https://gamedevelopment.tutsplus.com/tutorials/collision-detection-using-the-separating-axis-theorem--gamedev-169" target="_blank">Collision Detection Using the Separating Axis Theorem</a></p>
+
+<br/>
+<br/>
+
+<p><a href="index.html">index</a></p>
+<footer><a href="https://twitter.com/kyndinfo">kynd</a> 2017 | Please suggest edits and/or better code at <a href="https://github.com/kynd/p5sketches">Github</a></footer>
+</div>
+
+<script src="js/main.js" type="text/javascript"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/vs.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+</body>
+</html>
