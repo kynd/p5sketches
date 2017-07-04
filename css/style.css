@@ -70,7 +70,7 @@ div.math-wrapper { overflow:auto; }
 
 div.math-wrapper p { display: inline-block; margin: 0px 16px 24px 16px; }
 
-span.math-wrapper { display: inline-block; margin: 0 8px 0 8px; }
+span.math-wrapper { display: inline-block; margin: 0 4px 0 4px; }
 
 footer { font-size: 0.8em; line-height: 1.5em; text-align:right;
 font-family:  'Open Sans', sans-serif; font-weight: 300;
