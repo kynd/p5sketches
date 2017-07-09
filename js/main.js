@@ -1,6 +1,7 @@
 let elms = document.getElementsByClassName("example");
 let flms = [];
 let codeLoadCnt = 0;
+
 Array.prototype.forEach.call(elms, (elm, i)=> {
   let h = elm.clientWidth, w = elm.clientHeight;
 

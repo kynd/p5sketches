@@ -1,3 +1,5 @@
+var stopAudio = false;
+
 function saveCanvasInterval(n = 2) {
   if ((frameCount - 1) % n == 0) {
     saveCanvas('output' + (frameCount - 1) / n, 'png');
