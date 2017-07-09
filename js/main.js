@@ -15,7 +15,6 @@ Array.prototype.forEach.call(elms, (elm, i)=> {
     }
     flms.push(frame);
   }, 100);
-
 });
 
 function buildIframeContents(elm, frame, doc, i) {
@@ -28,9 +27,10 @@ function buildIframeContents(elm, frame, doc, i) {
   appendScript(doc, "js/examples/lib.js")
     .then(()=>{appendScript(doc, scriptPath)
     .then(()=>{appendScript(doc, "js/examples/p5setup.js")
-    .then(()=>{appendScript(doc, "https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.8/p5.js")})
-    });
-    if (i != 0) {
+    .then(()=>{appendScript(doc, "https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js")
+  }) });
+
+  if (i != 0) {
       createExampleFooter(elm, frame, scriptPath);
     }
   });
