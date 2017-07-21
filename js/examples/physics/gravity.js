@@ -1,5 +1,5 @@
 let msec = 0, prevInitMsec = 0, prevNow = 0;
-let plotMode = -1, plotLabels = ["position(y)", "velocity(y)", "acceralation(y)"], plotStartMsec = 0, plotData = [];
+let plotMode = -1, plotLabels = ["position(y)", "velocity(y)", "acceleration(y)"], plotStartMsec = 0, plotData = [];
 let gravity = 9.8 * 2; // 2px ~= 1m
 let apple;
 
