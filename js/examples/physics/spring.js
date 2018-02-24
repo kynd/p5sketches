@@ -1,6 +1,6 @@
 let msec = 0, prevInitMsec = 0, prevNow = 0;
 let plotMode = -1, plotLabels = ["position(y)", "velocity(y)", "acceralation(y)"], plotStartMsec = 0, plotData = [];
-let paramMode = -1, tention = 1, friction = 0.0;
+let paramMode = -1, tension = 1, friction = 0.0;
 let ball;
 
 function setup() {
@@ -41,7 +41,7 @@ function draw() {
 
   plotGraph(plotData, graphX, height / 2, graphW, height - 64, 0, 10000, -height / 2 + 32, height / 2 - 32, "time", plotLabels[plotMode]);
 
-  drawLabel(graphX + graphW, 40, "tention: " + tention, RIGHT);
+  drawLabel(graphX + graphW, 40, "tension: " + tension, RIGHT);
   drawLabel(graphX + graphW, 56, "friction: " + friction, RIGHT);
 }
 
