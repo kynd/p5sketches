@@ -13,7 +13,7 @@ function draw() {
   const vx = position.x + velocity.x;
   const vy = position.y + velocity.y;
 
-  background(255, 198, 192);
+  background(117, 147, 208);
   push();
   translate(hw, hh);
 

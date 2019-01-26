@@ -7,7 +7,7 @@ function draw() {
   clear();
   const hw = width / 2, hh = height / 2;
 
-  background(255, 206, 164);
+  background(117, 147, 208);
   push();
   translate(hw, hh);
 

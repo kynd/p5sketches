@@ -17,7 +17,7 @@ function setup() {
     const ax = position.x + acceleration.x;
     const ay = position.y + acceleration.y;
   
-    background(255, 174, 166);
+    background(117, 147, 208);
     push();
     translate(hw, hh);
   

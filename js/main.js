@@ -2,9 +2,7 @@ let elms = document.getElementsByClassName("example");
 let flms = [];
 let codeLoadCnt = 0;
 
-console.log("DDD");
 Array.prototype.forEach.call(elms, (elm, i)=> {
-  console.log(elm);
   let h = elm.clientWidth, w = elm.clientHeight;
 
   let iframe = createElement(document, "iframe", {scrolling:"no"}, "");
