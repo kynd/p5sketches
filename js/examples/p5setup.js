@@ -1,6 +1,7 @@
 let __ready = false;
 let __clicked = false;
 
+
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }

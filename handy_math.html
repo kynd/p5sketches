@@ -25,7 +25,7 @@
 <div class="example" data-embed="math/sine_cosine" data-edit="http://codepen.io/kynd/pen/oYVPbz"></div>
 
 
-<h2>Rotate 2D points</h2>
+<h2>Rotating 2D points</h2>
 
 <div class="math-wrapper">
 <p>$$\begin{bmatrix}x'\\y'\end{bmatrix}=\begin{bmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}$$</p>
@@ -36,6 +36,7 @@
 
 <h2 id="distance">Euclidean distance between two points</h2>
 
+<p><a href="https://en.wikipedia.org/wiki/Euclidean_distance">Euclidean distance</a> is the most intuitive, "ordinary" straight-line distance between two points in Euclidean space.</p>
 <div class="math-wrapper">
 <h3>Two dimensions</h3>
 <p>$$p=(p_x,p_y),\;q=(q_x,q_y)$$</p>
@@ -46,6 +47,17 @@
 <p>$$\mathrm{distance}(p,q)=\sqrt{(p_1-q_1)^2+(p_2-q_2)^2+\cdots+(p_n-q_n)^2}=\sqrt{\sum_{i=1}^n(p_i+q_i)^2}$$</p>
 </div>
 <div class="example" data-embed="math/distance" data-edit='https://codepen.io/kynd/pen/oWJPJJ'></div>
+
+
+<h2 id="distance">Manhattan distance between two points</h2>
+<p>Euclidean distance is not the only way to measure distance between two points. In mathmatics, distance is defined by <a href="https://en.wikipedia.org/wiki/Metric_(mathematics)">a function called distance function or metric</a>, which can be any function that satisfy a set of conditions.</p>
+<p><a href="https://en.wikipedia.org/wiki/Taxicab_geometry">Manhattan distance</a> is an example of a non-Euclidean distance, which is the sum of the absolute differences of their Cartesian coordinates, or the distance a car would drive in a city laid out in square blocks.</p>
+<div class="math-wrapper">
+<h3>Two dimensions</h3>
+<p>$$p=(p_x,p_y),\;q=(q_x,q_y)$$</p>
+<p>$$distance\left(p,\;q\right)\;=\;\left|p_x\;-\;q_x\right|\;-\;\left|p_y\;-\;qy_{}\right|\;$$</p>
+</div>
+<div class="example" data-embed="math/manhattan_distance" data-edit='https://codepen.io/kynd/pen/oWJPJJ'></div>
 
 
 <h2>Perspective Projection (Fixed Camera)</h2>
@@ -98,7 +110,7 @@
 <div class="example" data-embed="math/cross_product" data-edit='https://codepen.io/kynd/pen/qmLMGQ'></div>
 
 <p><a href="index.html">index</a></p>
-<footer><a href="https://twitter.com/kyndinfo">kynd</a> 2017 | Please suggest edits and/or better code at <a href="https://github.com/kynd/p5sketches">Github</a></footer>
+<footer><a href="https://twitter.com/kyndinfo">kynd</a> 2019 | Please suggest edits and/or better code at <a href="https://github.com/kynd/p5sketches">Github</a></footer>
 </div>
 
 

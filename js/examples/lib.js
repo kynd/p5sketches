@@ -6,10 +6,10 @@ function saveCanvasInterval(n = 2) {
   }
 }
 
-function drawLineWithLabel(x0, y0, x1, y1, label, align = CENTER) {
+function drawLineWithLabel(x0, y0, x1, y1, label, align = CENTER, offsetX = 0, offsetY = 0) {
   line(x0, y0, x1, y1);
   let mx = (x0 + x1) / 2, my = (y0 + y1) / 2;
-  drawLabel(mx, my, label, align);
+  drawLabel(mx + offsetX, my + offsetY, label, align);
 }
 
 function drawLabel(x, y, label, align = CENTER) {
@@ -73,8 +73,7 @@ function rotate3d(v, axis, angle) {
 	+ v.y * (ax.x * ax.y * cosb - ax.z * sina)
 	+ v.z * (ax.x * ax.z * cosb + ax.y * sina);
 	let y = v.x * (ax.y * ax.x * cosb + ax.z * sina)
-	+ v.y * (ax.y * ax.y * cosb + cosa)
-	+ v.z * (ax.y * ax.z * cosb - ax.x * sina);
+	+ v.y * (ax.y * ax.z * cosb - ax.x * sina);
 	let z = v.x * (ax.z * ax.x * cosb - ax.y * sina)
 	+ v.y * (ax.z * ax.y * cosb + ax.x * sina)
 	+ v.z * (ax.z * ax.z * cosb + cosa);

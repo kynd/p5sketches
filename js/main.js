@@ -2,7 +2,9 @@ let elms = document.getElementsByClassName("example");
 let flms = [];
 let codeLoadCnt = 0;
 
+console.log("DDD");
 Array.prototype.forEach.call(elms, (elm, i)=> {
+  console.log(elm);
   let h = elm.clientWidth, w = elm.clientHeight;
 
   let iframe = createElement(document, "iframe", {scrolling:"no"}, "");
@@ -10,6 +12,8 @@ Array.prototype.forEach.call(elms, (elm, i)=> {
   var interval = setInterval(function() {
     var frame = iframe.contentWindow;
     var doc = iframe.contentDocument || iframe.contentWindow.document;
+
+    
     if(doc.readyState == "complete") {
       clearInterval(interval);
       buildIframeContents(elm, frame, doc, i);
@@ -28,7 +32,7 @@ function buildIframeContents(elm, frame, doc, i) {
   appendScript(doc, "js/examples/lib.js")
     .then(()=>{appendScript(doc, scriptPath)
     .then(()=>{appendScript(doc, "js/examples/p5setup.js")
-    .then(()=>{appendScript(doc, "https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js")
+    .then(()=>{appendScript(doc, "https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js")
   }) });
 
   if (i != 0) {
