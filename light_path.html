@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<title>Light Path</title>
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Fredericka+the+Great|Open+Sans:300,400|Roboto+Mono:300" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="header"><div class="example" data-embed="light_path/mirrors"></div></div>
+<div id="main">
+
+<h1>Path of Light</h1>
+<p><a href="index.html">Sketching with Math and Quasi Physics</a></p>
+
+<h2>Reflection</h2>
+<div class="math-wrapper"><p>$${r=i-\frac{2i\cdot n}{\left\|n\right\|^2}n}$$</p></div>
+<p><span class="math-wrapper">$${i}$$</span>: vector of the ray to the surface, <span class="math-wrapper">$${n}$$</span>: normal of the surface, <span class="math-wrapper">$${r}$$</span>: vector of the reflected ray</p>
+<div class="example" data-embed="light_path/reflection" data-edit="https://codepen.io/kynd/pen/qgjjQj"></div>
+
+<h2>Parabola</h2>
+<p>Parallel rays coming into a parabolic mirror converge at a single focal point</p>
+<div class="example" data-embed="light_path/parabola" data-edit="https://codepen.io/kynd/pen/bzRROZ"></div>
+
+<h2>Refraction</h2>
+<div class="example" data-embed="light_path/refraction" data-edit="https://codepen.io/kynd/pen/exRegO"></div>
+<h3>Learn more</h3>
+<p><a href="https://www.scratchapixel.com/lessons/3d-basic-rendering/introduction-to-shading/reflection-refraction-fresnel">Scratchapixel 2.0</a></p>
+
+<h2>Random Mirrors</h2>
+<div class="example" data-embed="light_path/mirrors" data-edit="https://codepen.io/kynd/pen/VgWrpb"></div>
+<h3>Learn more</h3>
+<p><a href="https://www.scratchapixel.com/lessons/3d-basic-rendering/introduction-to-shading/reflection-refraction-fresnel">Scratchapixel 2.0</a></p>
+
+<p class="index-link"><a href="index.html">index</a></p>
+<footer><a href="https://twitter.com/kyndinfo">kynd</a> 2019 | Please suggest edits and/or better code at <a href="https://github.com/kynd/p5sketches">Github</a></footer>
+</div>
+
+<script src="js/main.js" type="text/javascript"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/vs.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+</body>
+</html>
