@@ -1,3 +1,11 @@
+.note-latest {
+  background-color: #FFFF9F;
+  padding: 16px 24px 16px 24px;
+  display: inline-block;
+  border-radius: 8px;
+  font-weight: 900;
+}
+
 body { margin:0; padding: 0; font-family: 'Open Sans', sans-serif; }
 #header {width: 100%; }
 #main { max-width:960px; margin: 0 auto 0 auto; }
